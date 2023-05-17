@@ -4,9 +4,9 @@ from views_mangers.loginView_Manger import LoginScreen
 import sys
 from PyQt5.QtCore import QTimer, QThread, pyqtSignal, pyqtSlot
 from PyQt5.QtGui import QImage, QPixmap, QPainter
-class EmailSaver(QtWidgets.QStackedWidget):
+class SpecialsAid(QtWidgets.QStackedWidget):
     def __init__(self, name=None, *args, **kwargs):
-        super(EmailSaver, self).__init__()
+        super(SpecialsAid, self).__init__()
 
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":ICONS/icons/output.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -44,7 +44,7 @@ class EmailSaver(QtWidgets.QStackedWidget):
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
-    w = EmailSaver()
+    w = SpecialsAid()
     w.show()
     # app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
     app.exec_()
