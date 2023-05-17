@@ -1,5 +1,11 @@
 <RCC>
   <qresource prefix="icons">
+    <file>icons/more (2).png</file>
+    <file>icons/more (1).png</file>
+    <file>icons/more.png</file>
+    <file>icons/meMode.png</file>
+    <file>icons/icons8-do-not-disturb-ios-50.png</file>
+    <file>icons/icons8-contrast-67.png</file>
     <file>icons/icons8-edit-48.png</file>
     <file>icons/icons8-user-96.png</file>
     <file>icons/icons8-clear-48.png</file>
