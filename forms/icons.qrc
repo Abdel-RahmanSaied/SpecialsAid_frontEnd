@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>icons/icons8-back-50.png</file>
+    <file>icons/icons8-add-50.png</file>
+    <file>icons/yosef.jpg</file>
+    <file>icons/icons8-abc-48.png</file>
+  </qresource>
+</RCC>
