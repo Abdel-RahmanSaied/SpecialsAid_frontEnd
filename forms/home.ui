@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>815</width>
-    <height>630</height>
+    <height>643</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,7 +16,7 @@
   <property name="styleSheet">
    <string notr="true">
 QMainWindow {
-    background-color:#ececec;
+    background-color:#d4dbdf;
 }
 QPushButton, QToolButton, QCommandLinkButton{
     padding: 0 5px 0 5px;
@@ -493,19 +493,22 @@ QScrollBar::right-arrow:horizontal {
           <property name="minimumSize">
            <size>
             <width>200</width>
-            <height>15</height>
+            <height>30</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
             <width>200</width>
-            <height>15</height>
+            <height>30</height>
            </size>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+           </font>
+          </property>
           <property name="text">
-           <string>So what's the plan for today?
-
-</string>
+           <string>So what's the plan for today?</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -555,6 +558,11 @@ QScrollBar::right-arrow:horizontal {
             <width>80</width>
             <height>40</height>
            </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>-1</pointsize>
+           </font>
           </property>
           <property name="styleSheet">
            <string notr="true">font-size:30px;</string>
@@ -608,7 +616,7 @@ QScrollBar::right-arrow:horizontal {
       <property name="sizeHint" stdset="0">
        <size>
         <width>20</width>
-        <height>20</height>
+        <height>80</height>
        </size>
       </property>
      </spacer>
@@ -644,10 +652,11 @@ QScrollBar::right-arrow:horizontal {
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">background-color: rgb(255, 255, 255);
+border-radius:10% 10%</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="edit_tab">
        <attribute name="title">
@@ -721,12 +730,13 @@ QPushButton:hover{
          <string>   Start Now</string>
         </property>
         <property name="icon">
-         <iconset theme="edit"/>
+         <iconset resource="icons.qrc">
+          <normaloff>:/icons/icons/icons8-edit-48.png</normaloff>:/icons/icons/icons8-edit-48.png</iconset>
         </property>
         <property name="iconSize">
          <size>
-          <width>25</width>
-          <height>25</height>
+          <width>30</width>
+          <height>30</height>
          </size>
         </property>
        </widget>
@@ -798,12 +808,13 @@ QPushButton:hover{
          <string>    Me</string>
         </property>
         <property name="icon">
-         <iconset theme="user"/>
+         <iconset resource="icons.qrc">
+          <normaloff>:/icons/icons/icons8-user-96.png</normaloff>:/icons/icons/icons8-user-96.png</iconset>
         </property>
         <property name="iconSize">
          <size>
-          <width>25</width>
-          <height>25</height>
+          <width>40</width>
+          <height>40</height>
          </size>
         </property>
        </widget>
@@ -846,6 +857,8 @@ QPushButton:hover{
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="icons.qrc"/>
+ </resources>
  <connections/>
 </ui>

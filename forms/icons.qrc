@@ -1,8 +1,16 @@
 <RCC>
   <qresource prefix="icons">
+    <file>icons/icons8-edit-48.png</file>
+    <file>icons/icons8-user-96.png</file>
+    <file>icons/icons8-clear-48.png</file>
+    <file>icons/icons8-play-48.png</file>
+    <file>icons/icons8-delete-48.png</file>
+    <file>icons/editMode.png</file>
+    <file>icons/icons8-next-50blue.png</file>
+    <file>icons/icons8-next-50.png</file>
     <file>icons/icons8-back-50.png</file>
     <file>icons/icons8-add-50.png</file>
-    <file>icons/yosef.jpg</file>
     <file>icons/icons8-abc-48.png</file>
+    <file>icons/7069717.png</file>
   </qresource>
 </RCC>
