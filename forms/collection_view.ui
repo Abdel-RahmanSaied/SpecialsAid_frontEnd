@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1627</width>
-    <height>1112</height>
+    <height>1117</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -454,7 +454,7 @@ QScrollBar::right-arrow:horizontal {
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">background-color: rgb(255, 255, 255,0);</string>
       </property>
       <property name="text">
        <string/>
@@ -470,7 +470,7 @@ QScrollBar::right-arrow:horizontal {
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">background-color: rgb(255, 255, 255,0);</string>
       </property>
       <property name="text">
        <string/>
@@ -486,7 +486,7 @@ QScrollBar::right-arrow:horizontal {
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">background-color: rgb(255, 255, 255,0);</string>
       </property>
       <property name="text">
        <string/>
@@ -500,6 +500,9 @@ QScrollBar::right-arrow:horizontal {
         <width>240</width>
         <height>260</height>
        </size>
+      </property>
+      <property name="styleSheet">
+       <string>background-color: rgb(255, 255, 255,0);</string>
       </property>
       <property name="text">
        <string/>
@@ -560,7 +563,7 @@ QScrollBar::right-arrow:horizontal {
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">background-color: rgb(255, 255, 255,0);</string>
       </property>
       <property name="text">
        <string/>
@@ -591,6 +594,9 @@ QScrollBar::right-arrow:horizontal {
         <height>260</height>
        </size>
       </property>
+      <property name="styleSheet">
+       <string>background-color: rgb(255, 255, 255,0);</string>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -603,6 +609,9 @@ QScrollBar::right-arrow:horizontal {
         <width>240</width>
         <height>260</height>
        </size>
+      </property>
+      <property name="styleSheet">
+       <string>background-color: rgb(255, 255, 255,0);</string>
       </property>
       <property name="text">
        <string/>
@@ -733,6 +742,9 @@ border-color: rgb(255, 255, 255,0);</string>
         <height>260</height>
        </size>
       </property>
+      <property name="styleSheet">
+       <string>background-color: rgb(255, 255, 255,0);</string>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -854,14 +866,14 @@ QPushButton:hover{
         <widget class="QPushButton" name="play_btn">
          <property name="minimumSize">
           <size>
-           <width>40</width>
-           <height>40</height>
+           <width>45</width>
+           <height>45</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>40</width>
-           <height>40</height>
+           <width>45</width>
+           <height>45</height>
           </size>
          </property>
          <property name="styleSheet">
@@ -884,8 +896,8 @@ QPushButton:hover{
          </property>
          <property name="iconSize">
           <size>
-           <width>30</width>
-           <height>30</height>
+           <width>40</width>
+           <height>40</height>
           </size>
          </property>
         </widget>
@@ -933,6 +945,9 @@ QPushButton:hover{
         <height>260</height>
        </size>
       </property>
+      <property name="styleSheet">
+       <string>background-color: rgb(255, 255, 255,0);</string>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -947,7 +962,7 @@ QPushButton:hover{
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">background-color: rgb(255, 255, 255,0);</string>
       </property>
       <property name="text">
        <string/>
@@ -963,7 +978,7 @@ QPushButton:hover{
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">background-color: rgb(255, 255, 255,0);</string>
       </property>
       <property name="text">
        <string/>
@@ -978,6 +993,9 @@ QPushButton:hover{
         <height>260</height>
        </size>
       </property>
+      <property name="styleSheet">
+       <string>background-color: rgb(255, 255, 255,0);</string>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -990,6 +1008,9 @@ QPushButton:hover{
         <width>240</width>
         <height>260</height>
        </size>
+      </property>
+      <property name="styleSheet">
+       <string>background-color: rgb(255, 255, 255,0);</string>
       </property>
       <property name="text">
        <string/>
@@ -1004,6 +1025,9 @@ QPushButton:hover{
         <height>260</height>
        </size>
       </property>
+      <property name="styleSheet">
+       <string>background-color: rgb(255, 255, 255,0);</string>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -1016,6 +1040,9 @@ QPushButton:hover{
         <width>240</width>
         <height>260</height>
        </size>
+      </property>
+      <property name="styleSheet">
+       <string>background-color: rgb(255, 255, 255,0);</string>
       </property>
       <property name="text">
        <string/>

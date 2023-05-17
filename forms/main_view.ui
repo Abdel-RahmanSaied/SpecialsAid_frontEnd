@@ -445,8 +445,40 @@ QScrollBar::right-arrow:horizontal {
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_2">
-    <item row="3" column="1">
-     <widget class="QPushButton" name="pushButton_1">
+    <item row="5" column="5">
+     <widget class="QPushButton" name="pushButton_8">
+      <property name="minimumSize">
+       <size>
+        <width>240</width>
+        <height>260</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255,0);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="6">
+     <spacer name="horizontalSpacer_5">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="5" column="9">
+     <widget class="QPushButton" name="pushButton_10">
       <property name="minimumSize">
        <size>
         <width>240</width>
@@ -463,8 +495,8 @@ border-color: rgb(255, 255, 255,0);</string>
       </property>
      </widget>
     </item>
-    <item row="5" column="1">
-     <widget class="QPushButton" name="pushButton_6">
+    <item row="7" column="5">
+     <widget class="QPushButton" name="pushButton_13">
       <property name="minimumSize">
        <size>
         <width>240</width>
@@ -472,9 +504,7 @@ border-color: rgb(255, 255, 255,0);</string>
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(150, 202, 247);
-
-border-color: rgb(255, 255, 255,0);</string>
+       <string notr="true">background-color: rgb(255, 255, 255,0);</string>
       </property>
       <property name="text">
        <string/>
@@ -499,26 +529,10 @@ border-color: rgb(255, 255, 255,0);</string>
       </property>
      </widget>
     </item>
-    <item row="3" column="7">
-     <widget class="QPushButton" name="pushButton_4">
-      <property name="minimumSize">
-       <size>
-        <width>240</width>
-        <height>260</height>
-       </size>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="2">
-     <spacer name="horizontalSpacer_3">
+    <item row="3" column="0">
+     <spacer name="horizontalSpacer">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeType">
-       <enum>QSizePolicy::Fixed</enum>
       </property>
       <property name="sizeHint" stdset="0">
        <size>
@@ -527,6 +541,22 @@ border-color: rgb(255, 255, 255,0);</string>
        </size>
       </property>
      </spacer>
+    </item>
+    <item row="3" column="5">
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="minimumSize">
+       <size>
+        <width>240</width>
+        <height>260</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255,0);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
     </item>
     <item row="4" column="1">
      <spacer name="verticalSpacer_3">
@@ -544,21 +574,24 @@ border-color: rgb(255, 255, 255,0);</string>
       </property>
      </spacer>
     </item>
-    <item row="2" column="3">
-     <spacer name="verticalSpacer">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
+    <item row="3" column="7">
+     <widget class="QPushButton" name="pushButton_4">
+      <property name="minimumSize">
        <size>
-        <width>20</width>
-        <height>40</height>
+        <width>240</width>
+        <height>260</height>
        </size>
       </property>
-     </spacer>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255,0);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
     </item>
-    <item row="5" column="9">
-     <widget class="QPushButton" name="pushButton_10">
+    <item row="7" column="9">
+     <widget class="QPushButton" name="pushButton_15">
       <property name="minimumSize">
        <size>
         <width>240</width>
@@ -575,42 +608,162 @@ border-color: rgb(255, 255, 255,0);</string>
       </property>
      </widget>
     </item>
-    <item row="3" column="8">
-     <spacer name="horizontalSpacer_6">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
+    <item row="1" column="0" colspan="11">
+     <widget class="QFrame" name="frame">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);
+border-radius:10% 10%</string>
       </property>
-      <property name="sizeType">
-       <enum>QSizePolicy::Fixed</enum>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
       </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
       </property>
-     </spacer>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="1" column="2">
+        <widget class="QPushButton" name="delete_btn">
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">*{border-color: rgb(255, 255, 255);
+border-radius:20% 20%;}
+
+QPushButton:hover{
+	background-color: rgb(255, 0, 0,.3);
+
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="icons.qrc">
+           <normaloff>:/icons/icons/icons8-delete-48.png</normaloff>:/icons/icons/icons8-delete-48.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="play_btn">
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">*{border-color: rgb(255, 255, 255);
+border-radius:20% 20%;}
+
+QPushButton:hover{
+
+
+	background-color: rgb(170, 255, 255);
+}
+</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="icons.qrc">
+           <normaloff>:/icons/icons/icons8-play-48.png</normaloff>:/icons/icons/icons8-play-48.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLabel" name="text_to_talk_lbl">
+         <property name="font">
+          <font>
+           <family>Ubuntu</family>
+           <pointsize>13</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255,0);</string>
+         </property>
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </item>
-    <item row="5" column="5">
-     <widget class="QPushButton" name="pushButton_8">
+    <item row="5" column="1">
+     <widget class="QPushButton" name="pushButton_6">
       <property name="minimumSize">
        <size>
         <width>240</width>
         <height>260</height>
        </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 202, 247);
+
+border-color: rgb(255, 255, 255,0);</string>
       </property>
       <property name="text">
        <string/>
       </property>
      </widget>
     </item>
-    <item row="3" column="3">
-     <widget class="QPushButton" name="pushButton_2">
+    <item row="8" column="3">
+     <spacer name="verticalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="3" column="1">
+     <widget class="QPushButton" name="pushButton_1">
       <property name="minimumSize">
        <size>
         <width>240</width>
         <height>260</height>
        </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 202, 247);
+
+border-color: rgb(255, 255, 255,0);</string>
       </property>
       <property name="text">
        <string/>
@@ -619,6 +772,18 @@ border-color: rgb(255, 255, 255,0);</string>
     </item>
     <item row="0" column="0" colspan="11">
      <widget class="QFrame" name="frame_2">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>80</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>80</height>
+       </size>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-color: #38474f;
 border-radius:5% 5%;</string>
@@ -685,7 +850,7 @@ border-color: rgb(255, 255, 255,0);</string>
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="app_resources.qrc">
+          <iconset resource="icons.qrc">
            <normaloff>:/icons/icons/icons8-back-50.png</normaloff>:/icons/icons/icons8-back-50.png</iconset>
          </property>
          <property name="iconSize">
@@ -719,7 +884,7 @@ border-color: rgb(255, 255, 255,0);</string>
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="app_resources.qrc">
+          <iconset resource="icons.qrc">
            <normaloff>:/icons/icons/7069717.png</normaloff>:/icons/icons/7069717.png</iconset>
          </property>
          <property name="iconSize">
@@ -733,35 +898,6 @@ border-color: rgb(255, 255, 255,0);</string>
       </layout>
      </widget>
     </item>
-    <item row="7" column="7">
-     <widget class="QPushButton" name="pushButton_14">
-      <property name="minimumSize">
-       <size>
-        <width>240</width>
-        <height>260</height>
-       </size>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="6">
-     <spacer name="horizontalSpacer_5">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeType">
-       <enum>QSizePolicy::Fixed</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
     <item row="3" column="10">
      <spacer name="horizontalSpacer_2">
       <property name="orientation">
@@ -771,6 +907,19 @@ border-color: rgb(255, 255, 255,0);</string>
        <size>
         <width>40</width>
         <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="2" column="3">
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
        </size>
       </property>
      </spacer>
@@ -791,130 +940,102 @@ border-color: rgb(255, 255, 255,0);</string>
       </property>
      </spacer>
     </item>
-    <item row="8" column="3">
-     <spacer name="verticalSpacer_2">
+    <item row="5" column="7">
+     <widget class="QPushButton" name="pushButton_9">
+      <property name="minimumSize">
+       <size>
+        <width>240</width>
+        <height>260</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255,0);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <spacer name="horizontalSpacer_3">
       <property name="orientation">
-       <enum>Qt::Vertical</enum>
+       <enum>Qt::Horizontal</enum>
       </property>
       <property name="sizeType">
        <enum>QSizePolicy::Fixed</enum>
       </property>
       <property name="sizeHint" stdset="0">
        <size>
-        <width>20</width>
-        <height>40</height>
+        <width>40</width>
+        <height>20</height>
        </size>
       </property>
      </spacer>
     </item>
-    <item row="1" column="0" colspan="11">
-     <widget class="QFrame" name="frame">
+    <item row="3" column="8">
+     <spacer name="horizontalSpacer_6">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="7" column="1">
+     <widget class="QPushButton" name="pushButton_11">
+      <property name="minimumSize">
+       <size>
+        <width>240</width>
+        <height>260</height>
+       </size>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);
-border-radius:10% 10%</string>
+       <string notr="true">background-color: rgb(150, 202, 247);
+
+border-color: rgb(255, 255, 255,0);</string>
       </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
+      <property name="text">
+       <string/>
       </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
+     </widget>
+    </item>
+    <item row="5" column="3">
+     <widget class="QPushButton" name="pushButton_7">
+      <property name="minimumSize">
+       <size>
+        <width>240</width>
+        <height>260</height>
+       </size>
       </property>
-      <layout class="QGridLayout" name="gridLayout">
-       <item row="1" column="2">
-        <widget class="QPushButton" name="delete_btn">
-         <property name="minimumSize">
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">*{border-color: rgb(255, 255, 255);
-border-radius:20% 20%;}
-
-QPushButton:hover{
-	background-color: rgb(255, 0, 0,.3);
-
-}</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset resource="app_resources.qrc">
-           <normaloff>:/icons/icons/icons8-delete-48.png</normaloff>:/icons/icons/icons8-delete-48.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>30</width>
-           <height>30</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QPushButton" name="play_btn">
-         <property name="minimumSize">
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">*{border-color: rgb(255, 255, 255);
-border-radius:20% 20%;}
-
-QPushButton:hover{
-
-
-	background-color: rgb(170, 255, 255);
-}
-</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset resource="app_resources.qrc">
-           <normaloff>:/icons/icons/icons8-play-48.png</normaloff>:/icons/icons/icons8-play-48.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>30</width>
-           <height>30</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QLabel" name="text_to_talk_lbl">
-         <property name="font">
-          <font>
-           <family>Ubuntu</family>
-           <pointsize>13</pointsize>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(255, 255, 255,0);</string>
-         </property>
-         <property name="text">
-          <string>TextLabel</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255,0);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="7">
+     <widget class="QPushButton" name="pushButton_14">
+      <property name="minimumSize">
+       <size>
+        <width>240</width>
+        <height>260</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255,0);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
      </widget>
     </item>
     <item row="3" column="4">
@@ -941,13 +1062,16 @@ QPushButton:hover{
         <height>260</height>
        </size>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255,0);</string>
+      </property>
       <property name="text">
        <string/>
       </property>
      </widget>
     </item>
-    <item row="7" column="9">
-     <widget class="QPushButton" name="pushButton_15">
+    <item row="3" column="3">
+     <widget class="QPushButton" name="pushButton_2">
       <property name="minimumSize">
        <size>
         <width>240</width>
@@ -955,103 +1079,18 @@ QPushButton:hover{
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(150, 202, 247);
-
-border-color: rgb(255, 255, 255,0);</string>
+       <string notr="true">background-color: rgb(255, 255, 255,0);</string>
       </property>
       <property name="text">
        <string/>
       </property>
      </widget>
-    </item>
-    <item row="7" column="1">
-     <widget class="QPushButton" name="pushButton_11">
-      <property name="minimumSize">
-       <size>
-        <width>240</width>
-        <height>260</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(150, 202, 247);
-
-border-color: rgb(255, 255, 255,0);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="7">
-     <widget class="QPushButton" name="pushButton_9">
-      <property name="minimumSize">
-       <size>
-        <width>240</width>
-        <height>260</height>
-       </size>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="5">
-     <widget class="QPushButton" name="pushButton_13">
-      <property name="minimumSize">
-       <size>
-        <width>240</width>
-        <height>260</height>
-       </size>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="3">
-     <widget class="QPushButton" name="pushButton_7">
-      <property name="minimumSize">
-       <size>
-        <width>240</width>
-        <height>260</height>
-       </size>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="5">
-     <widget class="QPushButton" name="pushButton_3">
-      <property name="minimumSize">
-       <size>
-        <width>240</width>
-        <height>260</height>
-       </size>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="0">
-     <spacer name="horizontalSpacer">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
     </item>
    </layout>
   </widget>
  </widget>
  <resources>
-  <include location="app_resources.qrc"/>
+  <include location="icons.qrc"/>
  </resources>
  <connections/>
 </ui>
