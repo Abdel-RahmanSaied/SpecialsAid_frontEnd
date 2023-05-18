@@ -648,7 +648,7 @@ QPushButton:hover{
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="icons.qrc">
+          <iconset resource="app_resources.qrc">
            <normaloff>:/icons/icons/icons8-delete-48.png</normaloff>:/icons/icons/icons8-delete-48.png</iconset>
          </property>
          <property name="iconSize">
@@ -688,7 +688,7 @@ QPushButton:hover{
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="icons.qrc">
+          <iconset resource="app_resources.qrc">
            <normaloff>:/icons/icons/icons8-play-48.png</normaloff>:/icons/icons/icons8-play-48.png</iconset>
          </property>
          <property name="iconSize">
@@ -850,7 +850,7 @@ border-color: rgb(255, 255, 255,0);</string>
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="icons.qrc">
+          <iconset resource="app_resources.qrc">
            <normaloff>:/icons/icons/icons8-back-50.png</normaloff>:/icons/icons/icons8-back-50.png</iconset>
          </property>
          <property name="iconSize">
@@ -884,7 +884,7 @@ border-color: rgb(255, 255, 255,0);</string>
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="icons.qrc">
+          <iconset resource="app_resources.qrc">
            <normaloff>:/icons/icons/7069717.png</normaloff>:/icons/icons/7069717.png</iconset>
          </property>
          <property name="iconSize">
@@ -1090,7 +1090,7 @@ border-color: rgb(255, 255, 255,0);</string>
   </widget>
  </widget>
  <resources>
-  <include location="icons.qrc"/>
+  <include location="app_resources.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -471,224 +471,6 @@ QScrollBar::right-arrow:horizontal {
       </property>
      </spacer>
     </item>
-    <item row="4" column="1">
-     <widget class="QTabWidget" name="tabWidget">
-      <property name="minimumSize">
-       <size>
-        <width>500</width>
-        <height>300</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>500</width>
-        <height>300</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);
-border-radius:10% 10%;
-font-size:15px;</string>
-      </property>
-      <property name="currentIndex">
-       <number>1</number>
-      </property>
-      <widget class="QWidget" name="edit_tab">
-       <attribute name="title">
-        <string>    EDIT MODE    </string>
-       </attribute>
-       <widget class="QLabel" name="label">
-        <property name="geometry">
-         <rect>
-          <x>35</x>
-          <y>50</y>
-          <width>432</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>420</width>
-          <height>20</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>450</width>
-          <height>20</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">font-size:25px;</string>
-        </property>
-        <property name="text">
-         <string>Add symbols, build boards and more!
-
-</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="startnow_btn">
-        <property name="geometry">
-         <rect>
-          <x>150</x>
-          <y>125</y>
-          <width>210</width>
-          <height>60</height>
-         </rect>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>210</width>
-          <height>60</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>210</width>
-          <height>60</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">*{border-radius:30% 30%;
-font-size:20px;
-color: rgb(255, 255, 255);
-background-color: rgb(26, 95, 180);}
-QPushButton:hover{
-	background-color: rgb(53, 132, 228);
-}
-</string>
-        </property>
-        <property name="text">
-         <string>   Start Now</string>
-        </property>
-        <property name="icon">
-         <iconset resource="icons.qrc">
-          <normaloff>:/icons/icons/icons8-edit-48.png</normaloff>:/icons/icons/icons8-edit-48.png</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>30</width>
-          <height>30</height>
-         </size>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="symbols_btn">
-        <property name="geometry">
-         <rect>
-          <x>215</x>
-          <y>200</y>
-          <width>81</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">	*{
-	border-color: rgb(255, 255, 255,0);
-
-	color: rgb(28, 113, 216);
-	background-color: rgb(53, 132, 228,0);}
-QPushButton:hover{
-
-	color: rgb(153, 193, 241);
-}
-</string>
-        </property>
-        <property name="text">
-         <string>symbols</string>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QWidget" name="me_tab">
-       <attribute name="title">
-        <string>    ME MODE    </string>
-       </attribute>
-       <widget class="QPushButton" name="me_btn">
-        <property name="geometry">
-         <rect>
-          <x>150</x>
-          <y>125</y>
-          <width>210</width>
-          <height>60</height>
-         </rect>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>210</width>
-          <height>60</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>210</width>
-          <height>60</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">*{border-radius:30% 30%;
-font-size:20px;
-color: rgb(255, 255, 255);
-background-color: rgb(26, 95, 180);}
-QPushButton:hover{
-	background-color: rgb(53, 132, 228);
-}
-</string>
-        </property>
-        <property name="text">
-         <string>    Me</string>
-        </property>
-        <property name="icon">
-         <iconset resource="icons.qrc">
-          <normaloff>:/icons/icons/icons8-user-96.png</normaloff>:/icons/icons/icons8-user-96.png</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>40</width>
-          <height>40</height>
-         </size>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_2">
-        <property name="geometry">
-         <rect>
-          <x>90</x>
-          <y>50</y>
-          <width>310</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>310</width>
-          <height>20</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>310</width>
-          <height>20</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">font-size:25px;</string>
-        </property>
-        <property name="text">
-         <string>Let the user communicate!
-
-</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </widget>
-     </widget>
-    </item>
     <item row="1" column="1">
      <spacer name="verticalSpacer_6">
       <property name="orientation">
@@ -904,7 +686,7 @@ border-radius:5% 5%;</string>
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="icons.qrc">
+          <iconset resource="app_resources.qrc">
            <normaloff>:/icons/icons/icons8-do-not-disturb-ios-50.png</normaloff>:/icons/icons/icons8-do-not-disturb-ios-50.png</iconset>
          </property>
          <property name="iconSize">
@@ -914,6 +696,19 @@ border-radius:5% 5%;</string>
           </size>
          </property>
         </widget>
+       </item>
+       <item row="0" column="1">
+        <spacer name="horizontalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
        </item>
        <item row="0" column="0">
         <widget class="QPushButton" name="pushButton_16">
@@ -938,7 +733,7 @@ border-color: rgb(255, 255, 255,0);</string>
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="icons.qrc">
+          <iconset resource="app_resources.qrc">
            <normaloff>:/icons/icons/7069717.png</normaloff>:/icons/icons/7069717.png</iconset>
          </property>
          <property name="iconSize">
@@ -949,27 +744,232 @@ border-color: rgb(255, 255, 255,0);</string>
          </property>
         </widget>
        </item>
-       <item row="0" column="1">
-        <spacer name="horizontalSpacer_3">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
       </layout>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="minimumSize">
+       <size>
+        <width>500</width>
+        <height>300</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>500</width>
+        <height>300</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);
+border-radius:10% 10%;
+font-size:15px;</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="edit_tab">
+       <attribute name="title">
+        <string>    EDIT MODE    </string>
+       </attribute>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>35</x>
+          <y>50</y>
+          <width>432</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>420</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>450</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font-size:25px;</string>
+        </property>
+        <property name="text">
+         <string>Add symbols, build boards and more!
+
+</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="startnow_btn">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>125</y>
+          <width>210</width>
+          <height>60</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>210</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>210</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">*{border-radius:30% 30%;
+font-size:20px;
+color: rgb(255, 255, 255);
+background-color: rgb(26, 95, 180);}
+QPushButton:hover{
+	background-color: rgb(53, 132, 228);
+}
+</string>
+        </property>
+        <property name="text">
+         <string>   Start Now</string>
+        </property>
+        <property name="icon">
+         <iconset resource="app_resources.qrc">
+          <normaloff>:/icons/icons/icons8-edit-48.png</normaloff>:/icons/icons/icons8-edit-48.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>30</width>
+          <height>30</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="symbols_btn">
+        <property name="geometry">
+         <rect>
+          <x>215</x>
+          <y>200</y>
+          <width>81</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">	*{
+	border-color: rgb(255, 255, 255,0);
+
+	color: rgb(28, 113, 216);
+	background-color: rgb(53, 132, 228,0);}
+QPushButton:hover{
+
+	color: rgb(153, 193, 241);
+}
+</string>
+        </property>
+        <property name="text">
+         <string>symbols</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="me_tab">
+       <attribute name="title">
+        <string>    ME MODE    </string>
+       </attribute>
+       <widget class="QPushButton" name="me_btn">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>125</y>
+          <width>210</width>
+          <height>60</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>210</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>210</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">*{border-radius:30% 30%;
+font-size:20px;
+color: rgb(255, 255, 255);
+background-color: rgb(26, 95, 180);}
+QPushButton:hover{
+	background-color: rgb(53, 132, 228);
+}
+</string>
+        </property>
+        <property name="text">
+         <string>    Me</string>
+        </property>
+        <property name="icon">
+         <iconset resource="app_resources.qrc">
+          <normaloff>:/icons/icons/icons8-user-96.png</normaloff>:/icons/icons/icons8-user-96.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>40</width>
+          <height>40</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>50</y>
+          <width>310</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>310</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>310</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font-size:25px;</string>
+        </property>
+        <property name="text">
+         <string>Let the user communicate!
+
+</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </widget>
      </widget>
     </item>
    </layout>
   </widget>
  </widget>
  <resources>
-  <include location="icons.qrc"/>
+  <include location="app_resources.qrc"/>
  </resources>
  <connections/>
 </ui>
