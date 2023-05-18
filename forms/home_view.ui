@@ -587,8 +587,91 @@ border-radius:10% 10%;
 font-size:15px;</string>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
+     <widget class="QWidget" name="me_tab">
+      <attribute name="title">
+       <string>    ME MODE    </string>
+      </attribute>
+      <widget class="QPushButton" name="me_btn">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>125</y>
+         <width>210</width>
+         <height>60</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>210</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>210</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">*{border-radius:30% 30%;
+font-size:20px;
+color: rgb(255, 255, 255);
+background-color: rgb(26, 95, 180);}
+QPushButton:hover{
+	background-color: rgb(53, 132, 228);
+}
+</string>
+       </property>
+       <property name="text">
+        <string>    Me</string>
+       </property>
+       <property name="icon">
+        <iconset resource="app_resources.qrc">
+         <normaloff>:/icons/icons/icons8-user-96.png</normaloff>:/icons/icons/icons8-user-96.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>50</y>
+         <width>310</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>310</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>310</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font-size:25px;</string>
+       </property>
+       <property name="text">
+        <string>Let the user communicate!
+
+</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </widget>
      <widget class="QWidget" name="edit_tab">
       <attribute name="title">
        <string>    EDIT MODE    </string>
@@ -736,89 +819,6 @@ QPushButton:hover{
        </property>
        <property name="placeholderText">
         <string>Password</string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="me_tab">
-      <attribute name="title">
-       <string>    ME MODE    </string>
-      </attribute>
-      <widget class="QPushButton" name="me_btn">
-       <property name="geometry">
-        <rect>
-         <x>150</x>
-         <y>125</y>
-         <width>210</width>
-         <height>60</height>
-        </rect>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>210</width>
-         <height>60</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>210</width>
-         <height>60</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">*{border-radius:30% 30%;
-font-size:20px;
-color: rgb(255, 255, 255);
-background-color: rgb(26, 95, 180);}
-QPushButton:hover{
-	background-color: rgb(53, 132, 228);
-}
-</string>
-       </property>
-       <property name="text">
-        <string>    Me</string>
-       </property>
-       <property name="icon">
-        <iconset resource="app_resources.qrc">
-         <normaloff>:/icons/icons/icons8-user-96.png</normaloff>:/icons/icons/icons8-user-96.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>40</width>
-         <height>40</height>
-        </size>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_2">
-       <property name="geometry">
-        <rect>
-         <x>90</x>
-         <y>50</y>
-         <width>310</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>310</width>
-         <height>20</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>310</width>
-         <height>20</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">font-size:25px;</string>
-       </property>
-       <property name="text">
-        <string>Let the user communicate!
-
-</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </widget>
