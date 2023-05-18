@@ -1,6 +1,9 @@
-from PyQt5 import QtWidgets, QtGui, QtCore
-from views_mangers.welcomeView_Manger import WelcomeScreen
+import json
 
+from views_mangers.welcomeView_Manger import WelcomeScreen
+from views_mangers.homeView_manger import HomeScreen
+
+from PyQt5 import QtWidgets, QtGui, QtCore
 from PyQt5.QtCore import QTimer, QThread, pyqtSignal, pyqtSlot
 from PyQt5.QtGui import QImage, QPixmap, QPainter
 class SpecialsAid(QtWidgets.QStackedWidget):
@@ -14,13 +17,41 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         self.setWindowTitle(_translate("Form", "Specials Aid"))
         self.showMaximized()
 
-        self.base_url = "https://illacc.pythonanywhere.com"
+        self.base_url = "https://specialaid.pythonanywhere.com/"
+
 
         #install widget
         self.welcomeScreen = WelcomeScreen()
+        self.homeScreen = HomeScreen()
 
         # add widgets to the stack
         self.addWidget(self.welcomeScreen) #0 done
+        self.addWidget(self.homeScreen) #1 done
+
+        # install welcome signals
+        self.welcomeScreen.DoneSignal.connect(self.handleEndToutorial)
+        if not self.inToutorialMode() :
+            self.handleHomeScreen()
+
+
+
+    def handleHomeScreen(self):
+        self.setCurrentIndex(1)
+    def handleEndToutorial(self):
+        self.handleHomeScreen()
+        with open('setting/setting.json', ) as file:
+            setting = json.load(file)
+            setting['inStartupMode'] = False
+        # Write updated setting back to file
+        with open('setting/setting.json', 'w') as file:
+            json.dump(setting, file)
+    def inToutorialMode(self):
+        with open('setting/setting.json', ) as s:
+            setting = json.load(s)
+        return setting.get('inStartupMode')
+
+
+
 
 
     def clear_login(self):
