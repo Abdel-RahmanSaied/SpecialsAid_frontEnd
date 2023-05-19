@@ -6,9 +6,11 @@ import requests
 from PyQt5.QtGui import QIcon, QPixmap
 from PyQt5.QtWidgets import QWidget
 
+
 class ApiWorkerSignals(QtCore.QObject):
     finished = QtCore.pyqtSignal(dict)
     setButtonIcon = QtCore.pyqtSignal(object, str)
+
 
 class ApiWorker(QtCore.QRunnable):
     def __init__(self, url):
@@ -31,6 +33,7 @@ class ApiWorker(QtCore.QRunnable):
         pixmap = QtGui.QPixmap()
         pixmap.loadFromData(photo)
         return pixmap
+
 
 class MainViewScreen(QtWidgets.QWidget, main_view.Ui_Form):
     loginAcceptedSignal = QtCore.pyqtSignal()
@@ -65,7 +68,8 @@ class MainViewScreen(QtWidgets.QWidget, main_view.Ui_Form):
         for i in range(len(data['results'])):
             self.btnList[i].clicked.connect(lambda ch, i=i: self.handleCollectionBtn(data['results'][i]['id']))
             self.threadpool.globalInstance().findChild(QtCore.QThreadPool, 'globalInstance')
-            self.threadpool.start(lambda i=i: self.setButtonIcon(self.btnList[i], data['results'][i]['collection_image']))
+            self.threadpool.start(
+                lambda i=i: self.setButtonIcon(self.btnList[i], data['results'][i]['collection_image']))
             self.threadpool.start(lambda i=i: self.setTextLabel(self.labelsList[i], data['results'][i]['name']))
         self.loading.close()
 
@@ -92,6 +96,7 @@ class MainViewScreen(QtWidgets.QWidget, main_view.Ui_Form):
     def closeEvent(self, event):
         self.threadpool.clear()
         event.accept()
+
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
