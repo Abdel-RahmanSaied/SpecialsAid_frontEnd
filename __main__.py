@@ -40,10 +40,16 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         # install home buttons
         self.homeScreen.me_btn.clicked.connect(self.handleMainScreen)
 
+        # install main buttons
+        self.mainScreen.back_btn.clicked.connect(lambda : self.setCurrentIndex(1))
+
     def handleHomeScreen(self):
         self.setCurrentIndex(1)
 
     def handleMainScreen(self):
+        if self.mainScreen.firstTime:
+            self.mainScreen.run()
+            self.mainScreen.firstTime = False
         self.setCurrentIndex(2)
 
     def handleEndTutorial(self):

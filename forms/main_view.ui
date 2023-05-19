@@ -819,7 +819,7 @@ border-color: rgb(255, 255, 255,0);</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_4">
       <item row="0" column="0">
-       <widget class="QPushButton" name="i_btn_2">
+       <widget class="QPushButton" name="collect1_btn">
         <property name="minimumSize">
          <size>
           <width>215</width>
@@ -883,7 +883,7 @@ border-color: rgb(255, 255, 255,0);</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_5">
       <item row="0" column="0">
-       <widget class="QPushButton" name="i_btn_3">
+       <widget class="QPushButton" name="collect1_btn_2">
         <property name="minimumSize">
          <size>
           <width>215</width>
@@ -947,7 +947,7 @@ border-color: rgb(255, 255, 255,0);</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_6">
       <item row="0" column="0">
-       <widget class="QPushButton" name="i_btn_4">
+       <widget class="QPushButton" name="collect1_btn_3">
         <property name="minimumSize">
          <size>
           <width>215</width>
@@ -1248,7 +1248,7 @@ border-color: rgb(255, 255, 255,0);</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_10">
       <item row="0" column="0">
-       <widget class="QPushButton" name="i_btn_8">
+       <widget class="QPushButton" name="collect1_btn_4">
         <property name="minimumSize">
          <size>
           <width>215</width>
@@ -1312,7 +1312,7 @@ border-color: rgb(255, 255, 255,0);</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_12">
       <item row="0" column="0">
-       <widget class="QPushButton" name="i_btn_10">
+       <widget class="QPushButton" name="collect1_btn_5">
         <property name="minimumSize">
          <size>
           <width>215</width>
@@ -1376,7 +1376,7 @@ border-color: rgb(255, 255, 255,0);</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_11">
       <item row="0" column="0">
-       <widget class="QPushButton" name="i_btn_9">
+       <widget class="QPushButton" name="collect1_btn_6">
         <property name="minimumSize">
          <size>
           <width>215</width>
@@ -1600,7 +1600,7 @@ border-color: rgb(255, 255, 255,0);</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_17">
       <item row="0" column="0">
-       <widget class="QPushButton" name="i_btn_15">
+       <widget class="QPushButton" name="collect1_btn_7">
         <property name="minimumSize">
          <size>
           <width>215</width>
@@ -1664,7 +1664,7 @@ border-color: rgb(255, 255, 255,0);</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_15">
       <item row="0" column="0">
-       <widget class="QPushButton" name="i_btn_13">
+       <widget class="QPushButton" name="collect1_btn_8">
         <property name="minimumSize">
          <size>
           <width>215</width>
@@ -1728,7 +1728,7 @@ border-color: rgb(255, 255, 255,0);</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_16">
       <item row="0" column="0">
-       <widget class="QPushButton" name="i_btn_14">
+       <widget class="QPushButton" name="collect1_btn_9">
         <property name="minimumSize">
          <size>
           <width>215</width>
