@@ -1027,6 +1027,16 @@ border-color: rgb(255, 255, 255,0);</string>
         <property name="text">
          <string/>
         </property>
+        <property name="icon">
+         <iconset resource="app_resources.qrc">
+          <normaloff>:/icons/icons/yes.png</normaloff>:/icons/icons/yes.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>180</width>
+          <height>180</height>
+         </size>
+        </property>
        </widget>
       </item>
       <item row="1" column="0">
@@ -1048,7 +1058,7 @@ border-color: rgb(255, 255, 255,0);</string>
       <item row="2" column="0">
        <widget class="QLabel" name="label_5">
         <property name="text">
-         <string>TextLabel</string>
+         <string>Yes</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -1456,6 +1466,16 @@ border-color: rgb(255, 255, 255,0);</string>
         <property name="text">
          <string/>
         </property>
+        <property name="icon">
+         <iconset resource="app_resources.qrc">
+          <normaloff>:/icons/icons/no.png</normaloff>:/icons/icons/no.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>180</width>
+          <height>180</height>
+         </size>
+        </property>
        </widget>
       </item>
       <item row="1" column="0">
@@ -1477,7 +1497,7 @@ border-color: rgb(255, 255, 255,0);</string>
       <item row="2" column="0">
        <widget class="QLabel" name="label_6">
         <property name="text">
-         <string>TextLabel</string>
+         <string>No</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -1808,6 +1828,16 @@ border-color: rgb(255, 255, 255,0);</string>
         <property name="text">
          <string/>
         </property>
+        <property name="icon">
+         <iconset resource="app_resources.qrc">
+          <normaloff>:/icons/icons/showMore.png</normaloff>:/icons/icons/showMore.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>180</width>
+          <height>180</height>
+         </size>
+        </property>
        </widget>
       </item>
       <item row="1" column="0">
@@ -1829,7 +1859,7 @@ border-color: rgb(255, 255, 255,0);</string>
       <item row="2" column="0">
        <widget class="QLabel" name="label_12">
         <property name="text">
-         <string>TextLabel</string>
+         <string>More</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
