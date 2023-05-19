@@ -77,7 +77,7 @@ class MainViewScreen(QtWidgets.QWidget, main_view.Ui_Form):
         photo = self.get_image(url)
         icon = QIcon(photo)
         btn.setIcon(icon)
-        btn.setIconSize(QtCore.QSize(180, 180))
+        btn.setIconSize(QtCore.QSize(200, 200))
 
     def setTextLabel(self, label, text):
         label = self.findChild(QtWidgets.QLabel, label)

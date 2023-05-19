@@ -801,6 +801,9 @@ QPushButton:hover{
        <property name="placeholderText">
         <string>Username</string>
        </property>
+       <property name="clearButtonEnabled">
+        <bool>true</bool>
+       </property>
       </widget>
       <widget class="QLineEdit" name="Password_lin">
        <property name="geometry">
