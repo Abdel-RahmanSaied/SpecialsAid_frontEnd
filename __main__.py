@@ -3,6 +3,8 @@ import json
 from views_mangers.welcomeView_Manger import WelcomeScreen
 from views_mangers.homeView_manger import HomeScreen
 from views_mangers.mainCollectionView_manger import MainViewScreen
+from views_mangers.collectionsView_manger import CollectionsScreen
+from views.dark_sheet import Theme_Modes
 
 from PyQt5 import QtWidgets, QtGui, QtCore
 from PyQt5.QtCore import QTimer, QThread, pyqtSignal, pyqtSlot
@@ -26,11 +28,13 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         self.welcomeScreen = WelcomeScreen()
         self.homeScreen = HomeScreen()
         self.mainScreen = MainViewScreen()
+        self.collecionsScreen = CollectionsScreen()
 
         # add widgets to the stack
         self.addWidget(self.welcomeScreen)  # 0 done
         self.addWidget(self.homeScreen)  # 1 done
         self.addWidget(self.mainScreen)  # 2 done
+        self.addWidget(self.collecionsScreen)  # 3 done
 
         # install welcome signals
         self.welcomeScreen.DoneSignal.connect(self.handleEndTutorial)
@@ -39,18 +43,34 @@ class SpecialsAid(QtWidgets.QStackedWidget):
 
         # install home buttons
         self.homeScreen.me_btn.clicked.connect(self.handleMainScreen)
+        self.homeScreen.loginAcceptedSignal.connect(self.handle_login)
+        self.homeScreen.pushButton.clicked.connect(self.handle_darkmode)
 
         # install main buttons
         self.mainScreen.back_btn.clicked.connect(lambda : self.setCurrentIndex(1))
 
+        # install collections buttons
+        self.collecionsScreen.back_to_home_btn.clicked.connect(lambda : self.setCurrentIndex(1))
+
+
     def handleHomeScreen(self):
         self.setCurrentIndex(1)
 
+    def handle_login(self):
+        print("Login accepted signal received")
+        # self.clear_login()
+        self.setCurrentIndex(3)
+
+    def handle_darkmode(self):
+        dark_mode = Theme_Modes()
+        self.setStyleSheet(dark_mode)
+        self.homeScreen.setStyleSheet(dark_mode)
     def handleMainScreen(self):
         if self.mainScreen.firstTime:
             self.mainScreen.run()
             self.mainScreen.firstTime = False
         self.setCurrentIndex(2)
+        self.clear_login()
 
     def handleEndTutorial(self):
         self.handleHomeScreen()
@@ -67,8 +87,8 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         return setting.get('inStartupMode')
 
     def clear_login(self):
-        self.login_manger.username_lin.clear()
-        self.login_manger.password_lin.clear()
+        self.homeScreen.username_lin.setText("")
+        self.homeScreen.Password_lin.setText("")
 
 
 if __name__ == "__main__":
