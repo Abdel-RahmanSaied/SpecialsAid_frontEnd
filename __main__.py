@@ -2,6 +2,7 @@ import json
 
 from views_mangers.welcomeView_Manger import WelcomeScreen
 from views_mangers.homeView_manger import HomeScreen
+from views_mangers.mainCollectionView_manger import MainViewScreen
 
 from PyQt5 import QtWidgets, QtGui, QtCore
 from PyQt5.QtCore import QTimer, QThread, pyqtSignal, pyqtSlot
@@ -24,18 +25,26 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         # install widget
         self.welcomeScreen = WelcomeScreen()
         self.homeScreen = HomeScreen()
+        self.mainScreen = MainViewScreen()
 
         # add widgets to the stack
         self.addWidget(self.welcomeScreen)  # 0 done
         self.addWidget(self.homeScreen)  # 1 done
+        self.addWidget(self.mainScreen)  # 2 done
 
         # install welcome signals
         self.welcomeScreen.DoneSignal.connect(self.handleEndTutorial)
         if not self.inToutorialMode():
             self.handleHomeScreen()
 
+        # install home buttons
+        self.homeScreen.me_btn.clicked.connect(self.handleMainScreen)
+
     def handleHomeScreen(self):
         self.setCurrentIndex(1)
+
+    def handleMainScreen(self):
+        self.setCurrentIndex(2)
 
     def handleEndTutorial(self):
         self.handleHomeScreen()

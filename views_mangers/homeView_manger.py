@@ -13,7 +13,6 @@ class HomeScreen(QtWidgets.QWidget, home_view.Ui_Form):
         self.tabWidget.tabBar().setCurrentIndex(0)
 
 
-
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
     w = HomeScreen()

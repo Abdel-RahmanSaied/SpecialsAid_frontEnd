@@ -1,5 +1,8 @@
 <RCC>
   <qresource prefix="icons">
+    <file>icons/I do not want.png</file>
+    <file>icons/I want.png</file>
+    <file>icons/I.png</file>
     <file>icons/more (2).png</file>
     <file>icons/more (1).png</file>
     <file>icons/more.png</file>
