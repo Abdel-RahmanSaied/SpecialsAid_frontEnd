@@ -1,21 +1,19 @@
 from PyQt5 import QtWidgets, QtCore
-from views import home_view
+from views import collections_view
 from PyQt5.QtCore import pyqtSignal
 import requests
 
 
-class HomeScreen(QtWidgets.QWidget, home_view.Ui_Form):
+class CollectionsScreen(QtWidgets.QWidget, collections_view.Ui_Form):
     loginAcceptedSignal = QtCore.pyqtSignal()
 
     def __init__(self):
-        super(HomeScreen, self).__init__()
+        super(CollectionsScreen, self).__init__()
         self.setupUi(self)
-        self.tabWidget.tabBar().setCurrentIndex(0)
-
 
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
-    w = HomeScreen()
+    w = CollectionsScreen()
     w.show()
     app.exec_()
