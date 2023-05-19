@@ -488,8 +488,7 @@ class Ui_Form(object):
         self.tabWidget = QtWidgets.QTabWidget(Form)
         self.tabWidget.setMinimumSize(QtCore.QSize(500, 300))
         self.tabWidget.setMaximumSize(QtCore.QSize(500, 300))
-        self.tabWidget.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-radius:10% 10%;\n"
+        self.tabWidget.setStyleSheet("border-radius:10% 10%;\n"
 "font-size:15px;")
         self.tabWidget.setObjectName("tabWidget")
         self.me_tab = QtWidgets.QWidget()

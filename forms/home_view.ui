@@ -582,8 +582,7 @@ border-color: rgb(255, 255, 255,0);</string>
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);
-border-radius:10% 10%;
+      <string notr="true">border-radius:10% 10%;
 font-size:15px;</string>
      </property>
      <property name="currentIndex">

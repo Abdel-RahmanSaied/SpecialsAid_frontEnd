@@ -14,7 +14,6 @@ class HomeScreen(QtWidgets.QWidget, home_view.Ui_Form):
         self.login_btn.clicked.connect(self.handle_login)
         self.base_url = "https://specialaid.pythonanywhere.com/auth/login/"
         self.userToken = ''
-        self.get_token()
 
     def handle_login(self):
         msg= QtWidgets.QMessageBox()
@@ -63,15 +62,10 @@ class HomeScreen(QtWidgets.QWidget, home_view.Ui_Form):
                 msg.setText("Something went wrong.")
                 msg.exec_()
 
-            except Exception as error:
-                print(error)
 
     def clear(self):
         self.username_lin.setText("")
         self.Password_lin.setText("")
-
-    def get_token(self):
-        return self.userToken
 
 
 
