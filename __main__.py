@@ -7,7 +7,7 @@ from views_mangers.collectionsView_manger import CollectionsScreen
 from views.dark_sheet import Theme_Modes
 from views_mangers.addCollectionView_manager import AddCollectionScreen
 from views_mangers.addSymbolView_manger import AddSymbolScreen
-
+from views_mangers.mySymbolsView_manger import MySymbolsScreen
 
 from PyQt5 import QtWidgets, QtGui, QtCore
 from PyQt5.QtCore import QTimer, QThread, pyqtSignal, pyqtSlot
@@ -34,7 +34,7 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         self.collecionsScreen = CollectionsScreen()
         self.addcollectionScreen = AddCollectionScreen()
         self.addSymbolScreen = AddSymbolScreen()
-
+        self.mySymbolsScreen = MySymbolsScreen()
         # add widgets to the stack
         self.addWidget(self.welcomeScreen)  # 0 done
         self.addWidget(self.homeScreen)  # 1 done
@@ -42,7 +42,7 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         self.addWidget(self.collecionsScreen)  # 3 done
         self.addWidget(self.addcollectionScreen)  # 4 done
         self.addWidget(self.addSymbolScreen)  # 5 done
-
+        self.addWidget(self.mySymbolsScreen)  # 6 done
         # install welcome signals
         self.welcomeScreen.DoneSignal.connect(self.handleEndTutorial)
         if not self.inToutorialMode():
@@ -52,6 +52,7 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         self.homeScreen.me_btn.clicked.connect(self.handleMainScreen)
         self.homeScreen.loginAcceptedSignal.connect(self.handle_login)
         self.homeScreen.pushButton.clicked.connect(self.handle_darkmode)
+        self.homeScreen.symbols_btn.clicked.connect(lambda : self.setCurrentIndex(6))
 
         # install main buttons
         self.mainScreen.back_btn.clicked.connect(lambda : self.setCurrentIndex(1))
@@ -66,6 +67,9 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         # install add symbol buttons
         self.addSymbolScreen.back_to_home_btn.clicked.connect(lambda : self.setCurrentIndex(1))
         self.addSymbolScreen.add_collection_btn.clicked.connect(lambda : self.setCurrentIndex(4))
+
+        # install my symbols buttons
+        self.mySymbolsScreen.pushButton_33.clicked.connect(lambda : self.setCurrentIndex(1))
 
 
     def handleHomeScreen(self):
