@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(400, 300)
+        Form.resize(1408, 1064)
         Form.setStyleSheet("\n"
 "QMainWindow {\n"
 "    background-color:#f5f5f5;\n"
@@ -557,14 +557,14 @@ class Ui_Form(object):
         self.gridLayout_2.addItem(spacerItem, 2, 3, 1, 1)
         spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_2.addItem(spacerItem1, 3, 0, 1, 1)
-        self.pushButton_1 = QtWidgets.QPushButton(Form)
-        self.pushButton_1.setMinimumSize(QtCore.QSize(240, 260))
-        self.pushButton_1.setStyleSheet("background-color: rgb(150, 202, 247);\n"
+        self.i_btn = QtWidgets.QPushButton(Form)
+        self.i_btn.setMinimumSize(QtCore.QSize(240, 260))
+        self.i_btn.setStyleSheet("background-color: rgb(150, 202, 247);\n"
 "\n"
 "border-color: rgb(255, 255, 255,0);")
-        self.pushButton_1.setText("")
-        self.pushButton_1.setObjectName("pushButton_1")
-        self.gridLayout_2.addWidget(self.pushButton_1, 3, 1, 1, 1)
+        self.i_btn.setText("")
+        self.i_btn.setObjectName("i_btn")
+        self.gridLayout_2.addWidget(self.i_btn, 3, 1, 1, 1)
         spacerItem2 = QtWidgets.QSpacerItem(33, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_2.addItem(spacerItem2, 3, 2, 1, 1)
         self.pushButton_2 = QtWidgets.QPushButton(Form)
@@ -603,14 +603,14 @@ class Ui_Form(object):
         self.gridLayout_2.addItem(spacerItem6, 3, 10, 1, 1)
         spacerItem7 = QtWidgets.QSpacerItem(20, 27, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         self.gridLayout_2.addItem(spacerItem7, 4, 1, 1, 1)
-        self.pushButton_6 = QtWidgets.QPushButton(Form)
-        self.pushButton_6.setMinimumSize(QtCore.QSize(240, 260))
-        self.pushButton_6.setStyleSheet("background-color: rgb(150, 202, 247);\n"
+        self.iWant_btn = QtWidgets.QPushButton(Form)
+        self.iWant_btn.setMinimumSize(QtCore.QSize(240, 260))
+        self.iWant_btn.setStyleSheet("background-color: rgb(150, 202, 247);\n"
 "\n"
 "border-color: rgb(255, 255, 255,0);")
-        self.pushButton_6.setText("")
-        self.pushButton_6.setObjectName("pushButton_6")
-        self.gridLayout_2.addWidget(self.pushButton_6, 5, 1, 1, 1)
+        self.iWant_btn.setText("")
+        self.iWant_btn.setObjectName("iWant_btn")
+        self.gridLayout_2.addWidget(self.iWant_btn, 5, 1, 1, 1)
         self.pushButton_7 = QtWidgets.QPushButton(Form)
         self.pushButton_7.setMinimumSize(QtCore.QSize(240, 260))
         self.pushButton_7.setStyleSheet("background-color: rgb(255, 255, 255,0);")
@@ -639,14 +639,14 @@ class Ui_Form(object):
         self.gridLayout_2.addWidget(self.pushButton_10, 5, 9, 1, 1)
         spacerItem8 = QtWidgets.QSpacerItem(20, 26, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         self.gridLayout_2.addItem(spacerItem8, 6, 1, 1, 1)
-        self.pushButton_11 = QtWidgets.QPushButton(Form)
-        self.pushButton_11.setMinimumSize(QtCore.QSize(240, 260))
-        self.pushButton_11.setStyleSheet("background-color: rgb(150, 202, 247);\n"
+        self.iDontWant_btn = QtWidgets.QPushButton(Form)
+        self.iDontWant_btn.setMinimumSize(QtCore.QSize(240, 260))
+        self.iDontWant_btn.setStyleSheet("background-color: rgb(150, 202, 247);\n"
 "\n"
 "border-color: rgb(255, 255, 255,0);")
-        self.pushButton_11.setText("")
-        self.pushButton_11.setObjectName("pushButton_11")
-        self.gridLayout_2.addWidget(self.pushButton_11, 7, 1, 1, 1)
+        self.iDontWant_btn.setText("")
+        self.iDontWant_btn.setObjectName("iDontWant_btn")
+        self.gridLayout_2.addWidget(self.iDontWant_btn, 7, 1, 1, 1)
         self.pushButton_12 = QtWidgets.QPushButton(Form)
         self.pushButton_12.setMinimumSize(QtCore.QSize(240, 260))
         self.pushButton_12.setStyleSheet("background-color: rgb(255, 255, 255,0);")
