@@ -46,6 +46,10 @@ class MainViewScreen(QtWidgets.QWidget, main_view.Ui_Form):
             self.collect1_btn_6, self.collect1_btn_7, self.collect1_btn_8, self.collect1_btn_9,
         ]
 
+        self.labelsList = ['textCollection_lbl', 'textCollection_lbl_2', 'textCollection_lbl_3', 'textCollection_lbl_4',
+                           'textCollection_lbl_5', 'textCollection_lbl_6', 'textCollection_lbl_7',
+                           'textCollection_lbl_8', 'textCollection_lbl_9']
+
         self.threadpool = QtCore.QThreadPool()
 
     def run(self):
@@ -62,6 +66,7 @@ class MainViewScreen(QtWidgets.QWidget, main_view.Ui_Form):
             self.btnList[i].clicked.connect(lambda ch, i=i: self.handleCollectionBtn(data['results'][i]['id']))
             self.threadpool.globalInstance().findChild(QtCore.QThreadPool, 'globalInstance')
             self.threadpool.start(lambda i=i: self.setButtonIcon(self.btnList[i], data['results'][i]['collection_image']))
+            self.threadpool.start(lambda i=i: self.setTextLabel(self.labelsList[i], data['results'][i]['name']))
         self.loading.close()
 
     def setButtonIcon(self, btn, url):
@@ -70,8 +75,12 @@ class MainViewScreen(QtWidgets.QWidget, main_view.Ui_Form):
         btn.setIcon(icon)
         btn.setIconSize(QtCore.QSize(180, 180))
 
+    def setTextLabel(self, label, text):
+        label = self.findChild(QtWidgets.QLabel, label)
+        label.setText(text)
+
     def handleCollectionBtn(self, id):
-        print("handleCollectionBtn")
+        print(id)
 
     def get_image(self, url):
         response = requests.get(url)
