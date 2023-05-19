@@ -6,6 +6,8 @@ from views_mangers.homeView_manger import HomeScreen
 from PyQt5 import QtWidgets, QtGui, QtCore
 from PyQt5.QtCore import QTimer, QThread, pyqtSignal, pyqtSlot
 from PyQt5.QtGui import QImage, QPixmap, QPainter
+
+
 class SpecialsAid(QtWidgets.QStackedWidget):
     def __init__(self, name=None, *args, **kwargs):
         super(SpecialsAid, self).__init__()
@@ -19,25 +21,23 @@ class SpecialsAid(QtWidgets.QStackedWidget):
 
         self.base_url = "https://specialaid.pythonanywhere.com/"
 
-
-        #install widget
+        # install widget
         self.welcomeScreen = WelcomeScreen()
         self.homeScreen = HomeScreen()
 
         # add widgets to the stack
-        self.addWidget(self.welcomeScreen) #0 done
-        self.addWidget(self.homeScreen) #1 done
+        self.addWidget(self.welcomeScreen)  # 0 done
+        self.addWidget(self.homeScreen)  # 1 done
 
         # install welcome signals
-        self.welcomeScreen.DoneSignal.connect(self.handleEndToutorial)
-        if not self.inToutorialMode() :
+        self.welcomeScreen.DoneSignal.connect(self.handleEndTutorial)
+        if not self.inToutorialMode():
             self.handleHomeScreen()
-
-
 
     def handleHomeScreen(self):
         self.setCurrentIndex(1)
-    def handleEndToutorial(self):
+
+    def handleEndTutorial(self):
         self.handleHomeScreen()
         with open('setting/setting.json', ) as file:
             setting = json.load(file)
@@ -45,19 +45,15 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         # Write updated setting back to file
         with open('setting/setting.json', 'w') as file:
             json.dump(setting, file)
+
     def inToutorialMode(self):
         with open('setting/setting.json', ) as s:
             setting = json.load(s)
         return setting.get('inStartupMode')
 
-
-
-
-
     def clear_login(self):
         self.login_manger.username_lin.clear()
         self.login_manger.password_lin.clear()
-
 
 
 if __name__ == "__main__":

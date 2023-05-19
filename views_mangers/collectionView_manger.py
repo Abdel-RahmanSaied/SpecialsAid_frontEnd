@@ -12,7 +12,6 @@ class CollectionScreen(QtWidgets.QWidget, collection_view.Ui_Form):
         self.setupUi(self)
 
 
-
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
     w = CollectionScreen()
