@@ -5,6 +5,9 @@ from views_mangers.homeView_manger import HomeScreen
 from views_mangers.mainCollectionView_manger import MainViewScreen
 from views_mangers.collectionsView_manger import CollectionsScreen
 from views.dark_sheet import Theme_Modes
+from views_mangers.addCollectionView_manager import AddCollectionScreen
+from views_mangers.addSymbolView_manger import AddSymbolScreen
+
 
 from PyQt5 import QtWidgets, QtGui, QtCore
 from PyQt5.QtCore import QTimer, QThread, pyqtSignal, pyqtSlot
@@ -29,12 +32,16 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         self.homeScreen = HomeScreen()
         self.mainScreen = MainViewScreen()
         self.collecionsScreen = CollectionsScreen()
+        self.addcollectionScreen = AddCollectionScreen()
+        self.addSymbolScreen = AddSymbolScreen()
 
         # add widgets to the stack
         self.addWidget(self.welcomeScreen)  # 0 done
         self.addWidget(self.homeScreen)  # 1 done
         self.addWidget(self.mainScreen)  # 2 done
         self.addWidget(self.collecionsScreen)  # 3 done
+        self.addWidget(self.addcollectionScreen)  # 4 done
+        self.addWidget(self.addSymbolScreen)  # 5 done
 
         # install welcome signals
         self.welcomeScreen.DoneSignal.connect(self.handleEndTutorial)
@@ -52,6 +59,14 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         # install collections buttons
         self.collecionsScreen.back_to_home_btn.clicked.connect(lambda : self.setCurrentIndex(1))
 
+        # install add collection buttons
+        self.addcollectionScreen.back_to_home_btn.clicked.connect(lambda : self.setCurrentIndex(1))
+        self.addcollectionScreen.add_symbol_btn.clicked.connect(lambda : self.setCurrentIndex(5))
+
+        # install add symbol buttons
+        self.addSymbolScreen.back_to_home_btn.clicked.connect(lambda : self.setCurrentIndex(1))
+        self.addSymbolScreen.add_collection_btn.clicked.connect(lambda : self.setCurrentIndex(4))
+
 
     def handleHomeScreen(self):
         self.setCurrentIndex(1)
@@ -59,12 +74,11 @@ class SpecialsAid(QtWidgets.QStackedWidget):
     def handle_login(self):
         print("Login accepted signal received")
         # self.clear_login()
-        self.setCurrentIndex(3)
+        self.setCurrentIndex(4)
 
     def handle_darkmode(self):
         dark_mode = Theme_Modes()
         self.setStyleSheet(dark_mode)
-        self.homeScreen.setStyleSheet(dark_mode)
     def handleMainScreen(self):
         if self.mainScreen.firstTime:
             self.mainScreen.run()
