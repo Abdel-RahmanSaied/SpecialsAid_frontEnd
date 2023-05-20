@@ -1,24 +1,57 @@
 import pyttsx3
+import threading
 
 
-def text_to_speech(text):
-    engine = pyttsx3.init()
-    engine.setProperty('rate', 150)
-
-    # Split the text into chunks (adjust the chunk size as needed)
-    chunk_size = 100
-    chunks = [text[i:i + chunk_size] for i in range(0, len(text), chunk_size)]
-
-    for chunk in chunks:
-        engine.say(chunk)
-        engine.iterate()
-
-    engine.runAndWait()
 
 
-# Example usage
-text1 = "Hello, how are you?"
-text2 = "I hope you're doing well."
+class TextToSpeech:
+    def __init__(self):
+        self.engine = pyttsx3.init()
+        self.engine.setProperty('rate', 150)
 
-text_to_speech(text1)
-text_to_speech(text2)
+        self.text = ''
+        self.wordsList = []
+        self.lock = threading.Lock()
+
+
+    def speechText(self, text):
+        self.engine.say(text)
+        self.engine.runAndWait()
+        with self.lock:
+            self.wordsList.append(text)
+
+    def speechFullText(self):
+        thread = threading.Thread(target=self._speechFullTextThread)
+        thread.start()
+
+    def _speechFullTextThread(self):
+        full_word = " "
+        with self.lock:
+            word_list = self.wordsList.copy()
+        for word in word_list:
+            full_word += word + " "
+        self.engine.say(full_word)
+        self.engine.runAndWait()
+
+    def clearList(self):
+        with self.lock:
+            self.wordsList = []
+
+
+# # Example usage
+# text1 = "Hello, how are you?"
+# text2 = "I hope you're doing well."
+#
+#
+# textToSpeech = TextToSpeech()
+#
+# textToSpeech.speechText(text1)
+# textToSpeech.speechText(text2)
+#
+# textToSpeech.speechFullText()
+#
+# textToSpeech.clearList()
+#
+# print("List cleared")
+#
+# textToSpeech.speechFullText()

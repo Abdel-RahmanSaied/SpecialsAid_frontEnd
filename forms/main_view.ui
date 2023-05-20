@@ -1012,7 +1012,7 @@ border-color: rgb(255, 255, 255,0);</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_7">
       <item row="0" column="0">
-       <widget class="QPushButton" name="i_btn_5">
+       <widget class="QPushButton" name="yes_btn">
         <property name="minimumSize">
          <size>
           <width>215</width>
@@ -1451,7 +1451,7 @@ border-color: rgb(255, 255, 255,0);</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_8">
       <item row="0" column="0">
-       <widget class="QPushButton" name="i_btn_6">
+       <widget class="QPushButton" name="no_btn">
         <property name="minimumSize">
          <size>
           <width>215</width>

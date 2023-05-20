@@ -9,6 +9,8 @@ from views_mangers.addCollectionView_manager import AddCollectionScreen
 from views_mangers.addSymbolView_manger import AddSymbolScreen
 from views_mangers.mySymbolsView_manger import MySymbolsScreen
 
+from views_mangers.textToTalk import TextToSpeech
+
 from PyQt5 import QtWidgets, QtGui, QtCore
 from PyQt5.QtCore import QTimer, QThread, pyqtSignal, pyqtSlot
 from PyQt5.QtGui import QImage, QPixmap, QPainter
@@ -27,6 +29,7 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         self.showMaximized()
 
         self.base_url = "https://specialaid.pythonanywhere.com/"
+        self.fullText = ""
 
         # install widget
         self.welcomeScreen = WelcomeScreen()
@@ -36,6 +39,9 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         self.addcollectionScreen = AddCollectionScreen()
         self.addSymbolScreen = AddSymbolScreen()
         self.mySymbolsScreen = MySymbolsScreen()
+
+        self.textToSpeech = TextToSpeech()
+
         # add widgets to the stack
         self.addWidget(self.welcomeScreen)  # 0 done
         self.addWidget(self.homeScreen)  # 1 done
@@ -71,6 +77,42 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         # install my symbols buttons
         self.mySymbolsScreen.pushButton_33.clicked.connect(lambda : self.setCurrentIndex(1))
 
+        # install play button
+        self.mainScreen.play_btn.clicked.connect(self.textToTalkFull)
+        # install clear button
+        self.mainScreen.delete_btn.clicked.connect(self.clearLblText)
+
+
+        # install text to talk signals
+        self.mainScreen.textSignal.connect(self.textToTalk)
+        # self.mainScreen.textToTalkFullSignal.connect(self.textToTalkFull)
+        # self.mainScreen.clearTextToTalkSignal.connect(self.clearTextToTalk)
+
+
+    def textToTalk(self, obj ,text):
+        self.fullText += " " + text
+        self.setLblText(obj)
+        self.textToSpeech.speechText(text)
+    def setLblText(self, obj):
+        lbl = self.findChild(QtWidgets.QLabel, obj)
+        lbl.setText(self.fullText)
+    def clearLblText(self):
+        lbl = self.findChild(QtWidgets.QLabel, 'text_to_talk_lbl')
+        self.fullText = ""
+        lbl.setText(self.fullText)
+        self.textToSpeech.clearList()
+
+
+    def textToTalkFull(self):
+        self.textToSpeech.speechFullText()
+
+    def clearTextToTalk(self):
+        self.textToSpeech.clearList()
+
+    def handleTextlabel(self, text):
+        fullText = self.text_to_talk_lbl.text()
+        fullText += " " + text
+        self.text_to_talk_lbl.setText(fullText)
 
     def handleHomeScreen(self):
         self.setCurrentIndex(1)

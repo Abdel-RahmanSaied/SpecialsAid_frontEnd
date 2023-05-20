@@ -6,6 +6,7 @@ import requests
 from PyQt5.QtGui import QIcon, QPixmap
 from PyQt5.QtWidgets import QWidget
 
+from views_mangers.textToTalk import TextToSpeech
 
 class ApiWorkerSignals(QtCore.QObject):
     finished = QtCore.pyqtSignal(dict)
@@ -36,7 +37,7 @@ class ApiWorker(QtCore.QRunnable):
 
 
 class MainViewScreen(QtWidgets.QWidget, main_view.Ui_Form):
-    loginAcceptedSignal = QtCore.pyqtSignal()
+    textSignal = pyqtSignal(object, str)
 
     def __init__(self):
         super(MainViewScreen, self).__init__()
@@ -55,6 +56,12 @@ class MainViewScreen(QtWidgets.QWidget, main_view.Ui_Form):
 
         self.threadpool = QtCore.QThreadPool()
 
+        self.i_btn.clicked.connect(self.handleIbtn)
+        self.iWant_btn.clicked.connect(self.handleIWant_btn)
+        self.iDontWant_btn.clicked.connect(self.handleIDontWant_btn)
+        self.yes_btn.clicked.connect(self.handleYes_btn)
+        self.no_btn.clicked.connect(self.handleNo_btn)
+
     def run(self):
         worker = ApiWorker(self.base_url + "symbols/symbols_collection/")
         worker.setAutoDelete(True)
@@ -63,6 +70,22 @@ class MainViewScreen(QtWidgets.QWidget, main_view.Ui_Form):
         worker.signals.setButtonIcon.connect(self.setButtonIcon)
         self.loading.show()
         self.threadpool.start(worker)
+
+    def sendTextSignal(self, text):
+        self.textSignal.emit('text_to_talk_lbl', text)
+
+    def handleIbtn(self):
+        self.sendTextSignal('i')
+    def handleIWant_btn(self):
+        self.sendTextSignal('want')
+    def handleIDontWant_btn(self):
+        self.sendTextSignal('dont want')
+
+    def handleYes_btn(self):
+        self.sendTextSignal('yes')
+    def handleNo_btn(self):
+        self.sendTextSignal('no')
+
 
     def handleCollection(self, data):
         for i in range(len(data['results'])):
