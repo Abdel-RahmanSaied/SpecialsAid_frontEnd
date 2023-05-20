@@ -469,41 +469,6 @@ border-radius:5% 5%;</string>
       <enum>QFrame::Raised</enum>
      </property>
      <layout class="QGridLayout" name="gridLayout_5">
-      <item row="0" column="2">
-       <widget class="QPushButton" name="pushButton">
-        <property name="minimumSize">
-         <size>
-          <width>44</width>
-          <height>44</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>44</width>
-          <height>44</height>
-         </size>
-        </property>
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border-radius:20% 20%;</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset resource="app_resources.qrc">
-          <normaloff>:/icons/icons/icons8-do-not-disturb-ios-50.png</normaloff>:/icons/icons/icons8-do-not-disturb-ios-50.png</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>30</width>
-          <height>30</height>
-         </size>
-        </property>
-       </widget>
-      </item>
       <item row="0" column="1">
        <spacer name="horizontalSpacer_3">
         <property name="orientation">
