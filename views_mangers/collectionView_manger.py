@@ -46,10 +46,11 @@ class CollectionScreen(QtWidgets.QWidget, collection_view.Ui_Form):
         self.collectionID = 25
 
         self.btnList = [
-            self.collect1_btn, self.collect1_btn_2, self.collect1_btn_3, self.collect1_btn_4, self.collect1_btn_5,
+            self.collect1_btn, self.collect1_btn_1, self.collect1_btn_2, self.collect1_btn_3,
+            self.collect1_btn_4, self.collect1_btn_5,
             self.collect1_btn_6, self.collect1_btn_7, self.collect1_btn_8, self.collect1_btn_9,
             self.collect1_btn_10, self.collect1_btn_11, self.collect1_btn_12, self.collect1_btn_13,
-            self.collect1_btn_14, self.collect1_btn_15
+            self.collect1_btn_14, self.collect1_btn_14
         ]
 
         # self.run()

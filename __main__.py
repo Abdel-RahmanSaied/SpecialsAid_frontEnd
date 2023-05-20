@@ -18,6 +18,7 @@ from PyQt5.QtGui import QImage, QPixmap, QPainter
 
 from setting import styleSheets
 
+
 class SpecialsAid(QtWidgets.QStackedWidget):
     def __init__(self, name=None, *args, **kwargs):
         super(SpecialsAid, self).__init__()
@@ -31,6 +32,7 @@ class SpecialsAid(QtWidgets.QStackedWidget):
 
         self.base_url = "https://specialaid.pythonanywhere.com/"
         self.fullText = ""
+        self.token = ""
 
         # install widget
         self.welcomeScreen = WelcomeScreen()
@@ -54,6 +56,7 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         self.addWidget(self.mySymbolsScreen)  # 6 done
         self.addWidget(self.collectionViewScreen)  # 7 done
         # install welcome signals
+
         self.welcomeScreen.DoneSignal.connect(self.handleEndTutorial)
         if not self.inToutorialMode():
             self.handleHomeScreen()
@@ -61,30 +64,29 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         # install home buttons
         self.homeScreen.me_btn.clicked.connect(self.handleMainScreen)
         self.homeScreen.loginAcceptedSignal.connect(self.handle_login)
-        self.homeScreen.symbols_btn.clicked.connect(lambda : self.setCurrentIndex(6))
+        self.homeScreen.symbols_btn.clicked.connect(lambda: self.setCurrentIndex(6))
 
         # install main buttons
-        self.mainScreen.back_btn.clicked.connect(lambda : self.setCurrentIndex(1))
+        self.mainScreen.back_btn.clicked.connect(lambda: self.setCurrentIndex(1))
 
         # install collections buttons
-        self.collecionsScreen.back_to_home_btn.clicked.connect(lambda : self.setCurrentIndex(1))
+        self.collecionsScreen.back_to_home_btn.clicked.connect(lambda: self.setCurrentIndex(1))
 
         # install add collection buttons
-        self.addcollectionScreen.back_to_home_btn.clicked.connect(lambda : self.setCurrentIndex(1))
-        self.addcollectionScreen.add_symbol_btn.clicked.connect(lambda : self.setCurrentIndex(5))
+        self.addcollectionScreen.back_to_home_btn.clicked.connect(lambda: self.setCurrentIndex(1))
+        self.addcollectionScreen.add_symbol_btn.clicked.connect(lambda: self.setCurrentIndex(5))
 
         # install add symbol buttons
-        self.addSymbolScreen.back_to_home_btn.clicked.connect(lambda : self.setCurrentIndex(1))
-        self.addSymbolScreen.add_collection_btn.clicked.connect(lambda : self.setCurrentIndex(4))
+        self.addSymbolScreen.back_to_home_btn.clicked.connect(lambda: self.setCurrentIndex(1))
+        self.addSymbolScreen.add_collection_btn.clicked.connect(lambda: self.setCurrentIndex(4))
 
         # install my symbols buttons
-        self.mySymbolsScreen.pushButton_33.clicked.connect(lambda : self.setCurrentIndex(1))
+        self.mySymbolsScreen.pushButton_33.clicked.connect(lambda: self.setCurrentIndex(1))
 
         # install play button
         self.mainScreen.play_btn.clicked.connect(self.textToTalkFull)
         # install clear button
         self.mainScreen.delete_btn.clicked.connect(self.clearLblText)
-
 
         # install text to talk signals
         self.mainScreen.textSignal.connect(self.textToTalk)
@@ -92,24 +94,20 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         # self.mainScreen.textToTalkFullSignal.connect(self.textToTalkFull)
         # self.mainScreen.clearTextToTalkSignal.connect(self.clearTextToTalk)
 
-
-    def handleMainToCollection(self, collectionID):
-        self.collectionViewScreen.collectionID = collectionID
-        self.collectionViewScreen.run()
-        self.setCurrentIndex(7)
-    def textToTalk(self, obj ,text):
+    def textToTalk(self, obj, text):
         self.fullText += " " + text
         self.setLblText(obj)
         self.textToSpeech.speechText(text)
+
     def setLblText(self, obj):
         lbl = self.findChild(QtWidgets.QLabel, obj)
         lbl.setText(self.fullText)
+
     def clearLblText(self):
         lbl = self.findChild(QtWidgets.QLabel, 'text_to_talk_lbl')
         self.fullText = ""
         lbl.setText(self.fullText)
         self.textToSpeech.clearList()
-
 
     def textToTalkFull(self):
         self.textToSpeech.speechFullText()
@@ -125,11 +123,10 @@ class SpecialsAid(QtWidgets.QStackedWidget):
     def handleHomeScreen(self):
         self.setCurrentIndex(1)
 
-    def handle_login(self):
-        print("Login accepted signal received")
-        # self.clear_login()
+    def handle_login(self, token):
+        self.token = token
+        self.addcollectionScreen.token = token
         self.setCurrentIndex(4)
-
 
     def handleMainScreen(self):
         if self.mainScreen.firstTime:
@@ -137,6 +134,11 @@ class SpecialsAid(QtWidgets.QStackedWidget):
             self.mainScreen.firstTime = False
         self.setCurrentIndex(2)
         self.clear_login()
+
+    def handleMainToCollection(self, collectionID):
+        self.collectionViewScreen.collectionID = collectionID
+        self.collectionViewScreen.run()
+        self.setCurrentIndex(7)
 
     def handleEndTutorial(self):
         self.handleHomeScreen()
@@ -151,7 +153,6 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         with open('setting/setting.json', ) as s:
             setting = json.load(s)
         return setting.get('inStartupMode')
-
 
     def clear_login(self):
         self.homeScreen.username_lin.setText("")

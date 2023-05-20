@@ -5,66 +5,60 @@ import requests
 
 
 class HomeScreen(QtWidgets.QWidget, home_view.Ui_Form):
-    loginAcceptedSignal = QtCore.pyqtSignal()
+    loginAcceptedSignal = QtCore.pyqtSignal(str)
 
     def __init__(self):
         super(HomeScreen, self).__init__()
         self.setupUi(self)
         self.tabWidget.tabBar().setCurrentIndex(0)
         self.login_btn.clicked.connect(self.handle_login)
-        self.base_url = "https://specialaid.pythonanywhere.com/auth/login/"
-        self.userToken = ''
+
+        self.msg = QtWidgets.QMessageBox()
+        self.msg.setStyleSheet("min-width: 20cm; ")
 
     def handle_login(self):
-        msg = QtWidgets.QMessageBox()
+        if self.checkFields():
+            username = self.username_lin.text()
+            password = self.Password_lin.text()
+
+            if self.checkAuth(username, password):
+                self.clear()
+                self.msg.information(self, "Success", "Login Successful")
+
+
+
+    def checkFields(self):
         username = self.username_lin.text()
         password = self.Password_lin.text()
         if len(username) == 0:
-            msg.setWindowTitle("Warning")
-            msg.setText("you must fill all fields !")
-            msg.exec_()
+            self.msg.critical(self, "Error", "Please enter a username")
         elif len(password) == 0:
-            msg.setWindowTitle("Warning")
-            msg.setText("you must fill all fields !")
-            msg.exec_()
+            self.msg.critical(self, "Error", "Please enter a password")
         else:
-            data = {
-                "username": username,
-                "password": password
+            return True
 
-            }
-            try:
-                self.user_check = requests.post(self.base_url, data=data)
-                self.json_response = self.user_check.json()
-                self.json_statusCode = self.user_check.status_code
-            except (requests.ConnectionError, requests.Timeout) as exception:
-                print(exception)
-                msg.setWindowTitle("Warning")
-                msg.setText("No internet connection.")
-                msg.exec_()
-            try:
-                if self.json_statusCode == 200:
-                    self.userToken = self.json_response['token']
-                    self.username = self.json_response['email']
-                    self.loginAcceptedSignal.emit()
+    def checkAuth(self, username, password):
+        url = "https://specialaid.pythonanywhere.com/auth/login/"
+        data = {
+            "username": username,
+            "password": password
+        }
+        try:
+            reply = requests.post(url, data=data)
+        except (requests.ConnectionError, requests.Timeout) as exception:
+            print(exception)
+            self.msg.critical(self, "Error", "No internet connection.")
+        else:
+            if reply.status_code == 200:
+                userToken = reply.json()['token']
+                self.loginAcceptedSignal.emit(userToken)
+                return True
+            elif reply.status_code == 401:
+                self.msg.critical(self, "Error", reply.json()['Response'])
+            else:
+                self.msg.critical(self, "Error", "Something went wrong.")
 
-                elif self.json_statusCode == 401:
-                    msg.setWindowTitle("Warning")
-                    msg.setText("username or password was incorrect")
-                    msg.exec_()
-                else:
-                    msg.setWindowTitle("Warning")
-                    msg.setText(str(self.user_check['Error']))
-                    msg.exec_()
 
-            except Exception as error:
-                print(error)
-                msg.setWindowTitle("Warning")
-                msg.setText("Something went wrong.")
-                msg.exec_()
-
-            except Exception as error:
-                print(error)
 
     def clear(self):
         self.username_lin.setText("")

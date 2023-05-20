@@ -5,11 +5,12 @@ import requests
 from PyQt5 import QtGui
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
-
+# from views_mangers.progrssBar import WaitingScreen
 
 
 class AddCollectionScreen(QtWidgets.QWidget, add_collection_view.Ui_Form):
     loginAcceptedSignal = QtCore.pyqtSignal()
+
     def __init__(self):
         super(AddCollectionScreen, self).__init__()
         self.setupUi(self)
@@ -18,59 +19,65 @@ class AddCollectionScreen(QtWidgets.QWidget, add_collection_view.Ui_Form):
         self.upload_collection_btn.clicked.connect(self.run)
         self.choose_file_btn.clicked.connect(self.getfiles)
 
-    def getfiles(self , event):
-        msg = QtWidgets.QMessageBox()
-        self.fileName, _ = QtWidgets.QFileDialog.getOpenFileName(self, 'Single File', '', 'Images (*.png, *.jpeg , *.jpg) ')
-        return self.fileName
+        self.fileName = None
+
+        self.msg = QtWidgets.QMessageBox()
+        self.msg.setStyleSheet("min-width: 20cm; ")
+
     def run(self):
-        headers = {"Accept": "application/json ; indent=4",
-                   "Content-Type": "application/json", "Authorization": f"Token {self.token}"}
-        msg = QtWidgets.QMessageBox()
-        msg.setStyleSheet("min-width: 10em; ")
-        try :
-            self.test_url = f"{self.base_url}symbols/symbols_collection/"
+        headers = {"Accept": "application/json ; indent=4", "Authorization": f"Token {self.token}"}
+        name = self.collection_name_lin.text()
+        dimension_of_symbols = "2*2"
 
-            name = self.collection_name_lin.text()
-            dimension_of_symbols = "2*2"
+        if not name:
+            self.msg.critical(self, "Error", "Please enter a name")
 
-        except Exception as param_errors :
-            print("labels error", param_errors)
+        elif not self.fileName:
+            self.msg.critical(self, "Error", "Please choose a file")
+            self.getfiles(event=None)
 
-        try :
-
+        else:
             data = {
-
                 "name": name,
                 "dimension_of_symbols": dimension_of_symbols,
             }
-        except Exception as x:
-            print("data error", x)
-        try:
-            files=[
-            ('collection_image', (self.fileName, open(self.fileName, 'rb').read(), 'image/jpeg'))
-
-            ]
-
-        except Exception as RRR:
-            msg.setWindowTitle("Warning")
-            msg.setText("You Must Select A Photo")
-            msg.exec_()
-        try :
-            response = requests.post(self.test_url, json=data, files=files, headers=headers,)
-            if response.status_code == 201:
-                msg.setWindowTitle("Successfully")
-                msg.setText("Collection has been uploaded successfully")
-                msg.setWindowTitle("Success")
-                msg.exec_()
+            try:
+                files = [
+                    ('collection_image', (self.fileName, open(self.fileName, 'rb').read(), 'image/jpeg'))
+                ]
+            except Exception as filesError:
+                self.msg.critical(self, "Error", f"Error in files {filesError}")
             else:
-                msg.setWindowTitle("Warning")
-                msg.setText(str(response.json()["Response"]))
-                msg.exec_()
+                # self.waitingScreen = WaitingScreen()
+                # self.waitingScreen.show()
+                # QtWidgets.QApplication.processEvents()  # Process pending events to update the waiting screen
+                self.uploadCollection(data, files, headers)
+
+    def uploadCollection(self, data, files, headers):
+        url = f"{self.base_url}symbols/symbols_collection/"
+        try:
+            response = requests.post(url=url, data=data, files=files, headers=headers)
+            # self.waitingScreen.close()
         except requests.exceptions.RequestException as e:
-            print("response error:", e)
-            msg.setWindowTitle("Warning")
-            msg.setText("An error occurred while making the request")
-            msg.exec_()
+            self.msg.critical(self, "Error", f"An error occurred while making the request with error code: {e}")
+        else:
+            if response.status_code == 201:
+                self.msg.information(self, "Success", "Collection Uploaded Successfully")
+                self.collection_name_lin.setText("")
+                self.collection_location_lin.setText("")
+                self.fileName = None
+            else:
+                self.msg.critical(self, "Error",
+                                  f"An error occurred while making the request with error code: {response.status_code}")
+
+    def getfiles(self, event):
+        self.fileName, _ = QtWidgets.QFileDialog.getOpenFileName(self, 'Single File', '',
+                                                                 'Images (*.png, *.jpeg , *.jpg) ')
+        if not self.fileName:
+            self.msg.critical(self, "Error", "Please choose a file")
+            self.collection_location_lin.setText("Please choose a file")
+        else:
+            self.collection_location_lin.setText(self.fileName)
 
 
 if __name__ == "__main__":
