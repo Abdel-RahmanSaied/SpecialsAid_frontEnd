@@ -16,7 +16,7 @@ class HomeScreen(QtWidgets.QWidget, home_view.Ui_Form):
         self.userToken = ''
 
     def handle_login(self):
-        msg= QtWidgets.QMessageBox()
+        msg = QtWidgets.QMessageBox()
         username = self.username_lin.text()
         password = self.Password_lin.text()
         if len(username) == 0:
@@ -28,11 +28,11 @@ class HomeScreen(QtWidgets.QWidget, home_view.Ui_Form):
             msg.setText("you must fill all fields !")
             msg.exec_()
         else:
-            data={
-                "username":username,
-                "password":password
+            data = {
+                "username": username,
+                "password": password
 
-                 }
+            }
             try:
                 self.user_check = requests.post(self.base_url, data=data)
                 self.json_response = self.user_check.json()
@@ -57,16 +57,18 @@ class HomeScreen(QtWidgets.QWidget, home_view.Ui_Form):
                     msg.setText(str(self.user_check['Error']))
                     msg.exec_()
 
-            except Exception as x:
+            except Exception as error:
+                print(error)
                 msg.setWindowTitle("Warning")
                 msg.setText("Something went wrong.")
                 msg.exec_()
 
+            except Exception as error:
+                print(error)
 
     def clear(self):
         self.username_lin.setText("")
         self.Password_lin.setText("")
-
 
 
 if __name__ == "__main__":

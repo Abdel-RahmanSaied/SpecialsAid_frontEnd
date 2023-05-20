@@ -13,6 +13,7 @@ from PyQt5 import QtWidgets, QtGui, QtCore
 from PyQt5.QtCore import QTimer, QThread, pyqtSignal, pyqtSlot
 from PyQt5.QtGui import QImage, QPixmap, QPainter
 
+from setting import styleSheets
 
 class SpecialsAid(QtWidgets.QStackedWidget):
     def __init__(self, name=None, *args, **kwargs):
@@ -51,7 +52,6 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         # install home buttons
         self.homeScreen.me_btn.clicked.connect(self.handleMainScreen)
         self.homeScreen.loginAcceptedSignal.connect(self.handle_login)
-        self.homeScreen.pushButton.clicked.connect(self.handle_darkmode)
         self.homeScreen.symbols_btn.clicked.connect(lambda : self.setCurrentIndex(6))
 
         # install main buttons
@@ -80,9 +80,7 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         # self.clear_login()
         self.setCurrentIndex(4)
 
-    def handle_darkmode(self):
-        dark_mode = Theme_Modes()
-        self.setStyleSheet(dark_mode)
+
     def handleMainScreen(self):
         if self.mainScreen.firstTime:
             self.mainScreen.run()
@@ -103,6 +101,7 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         with open('setting/setting.json', ) as s:
             setting = json.load(s)
         return setting.get('inStartupMode')
+
 
     def clear_login(self):
         self.homeScreen.username_lin.setText("")
