@@ -4,6 +4,7 @@ from views_mangers.welcomeView_Manger import WelcomeScreen
 from views_mangers.homeView_manger import HomeScreen
 from views_mangers.mainCollectionView_manger import MainViewScreen
 from views_mangers.collectionsView_manger import CollectionsScreen
+from views_mangers.collectionView_manger import CollectionScreen
 from views.dark_sheet import Theme_Modes
 from views_mangers.addCollectionView_manager import AddCollectionScreen
 from views_mangers.addSymbolView_manger import AddSymbolScreen
@@ -39,6 +40,7 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         self.addcollectionScreen = AddCollectionScreen()
         self.addSymbolScreen = AddSymbolScreen()
         self.mySymbolsScreen = MySymbolsScreen()
+        self.collectionViewScreen = CollectionScreen()
 
         self.textToSpeech = TextToSpeech()
 
@@ -50,6 +52,7 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         self.addWidget(self.addcollectionScreen)  # 4 done
         self.addWidget(self.addSymbolScreen)  # 5 done
         self.addWidget(self.mySymbolsScreen)  # 6 done
+        self.addWidget(self.collectionViewScreen)  # 7 done
         # install welcome signals
         self.welcomeScreen.DoneSignal.connect(self.handleEndTutorial)
         if not self.inToutorialMode():
@@ -85,10 +88,15 @@ class SpecialsAid(QtWidgets.QStackedWidget):
 
         # install text to talk signals
         self.mainScreen.textSignal.connect(self.textToTalk)
+        self.mainScreen.collectionIDSignal.connect(self.handleMainToCollection)
         # self.mainScreen.textToTalkFullSignal.connect(self.textToTalkFull)
         # self.mainScreen.clearTextToTalkSignal.connect(self.clearTextToTalk)
 
 
+    def handleMainToCollection(self, collectionID):
+        self.collectionViewScreen.collectionID = collectionID
+        self.collectionViewScreen.run()
+        self.setCurrentIndex(7)
     def textToTalk(self, obj ,text):
         self.fullText += " " + text
         self.setLblText(obj)
