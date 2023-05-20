@@ -38,6 +38,7 @@ class ApiWorker(QtCore.QRunnable):
 
 class MainViewScreen(QtWidgets.QWidget, main_view.Ui_Form):
     textSignal = pyqtSignal(object, str)
+    collectionIDSignal = pyqtSignal(int)
 
     def __init__(self):
         super(MainViewScreen, self).__init__()
@@ -107,7 +108,7 @@ class MainViewScreen(QtWidgets.QWidget, main_view.Ui_Form):
         label.setText(text)
 
     def handleCollectionBtn(self, id):
-        print(id)
+        self.collectionIDSignal.emit(id)
 
     def get_image(self, url):
         response = requests.get(url)

@@ -697,7 +697,7 @@ QPushButton:hover{
     </spacer>
    </item>
    <item row="3" column="1">
-    <widget class="QPushButton" name="pushButton_1">
+    <widget class="QPushButton" name="collect1_btn">
      <property name="minimumSize">
       <size>
        <width>240</width>
@@ -729,7 +729,7 @@ QPushButton:hover{
     </spacer>
    </item>
    <item row="3" column="3">
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="collect1_btn_2">
      <property name="minimumSize">
       <size>
        <width>240</width>
@@ -761,7 +761,7 @@ QPushButton:hover{
     </spacer>
    </item>
    <item row="3" column="5">
-    <widget class="QPushButton" name="pushButton_3">
+    <widget class="QPushButton" name="collect1_btn_3">
      <property name="minimumSize">
       <size>
        <width>240</width>
@@ -793,7 +793,7 @@ QPushButton:hover{
     </spacer>
    </item>
    <item row="3" column="7">
-    <widget class="QPushButton" name="pushButton_4">
+    <widget class="QPushButton" name="collect1_btn_4">
      <property name="minimumSize">
       <size>
        <width>240</width>
@@ -825,7 +825,7 @@ QPushButton:hover{
     </spacer>
    </item>
    <item row="3" column="9">
-    <widget class="QPushButton" name="pushButton_5">
+    <widget class="QPushButton" name="collect1_btn_5">
      <property name="minimumSize">
       <size>
        <width>240</width>
@@ -870,7 +870,7 @@ QPushButton:hover{
     </spacer>
    </item>
    <item row="5" column="1">
-    <widget class="QPushButton" name="pushButton_6">
+    <widget class="QPushButton" name="collect1_btn_6">
      <property name="minimumSize">
       <size>
        <width>240</width>
@@ -886,7 +886,7 @@ QPushButton:hover{
     </widget>
    </item>
    <item row="5" column="3">
-    <widget class="QPushButton" name="pushButton_7">
+    <widget class="QPushButton" name="collect1_btn_7">
      <property name="minimumSize">
       <size>
        <width>240</width>
@@ -902,7 +902,7 @@ QPushButton:hover{
     </widget>
    </item>
    <item row="5" column="5">
-    <widget class="QPushButton" name="pushButton_8">
+    <widget class="QPushButton" name="collect1_btn_8">
      <property name="minimumSize">
       <size>
        <width>240</width>
@@ -918,7 +918,7 @@ QPushButton:hover{
     </widget>
    </item>
    <item row="5" column="7">
-    <widget class="QPushButton" name="pushButton_9">
+    <widget class="QPushButton" name="collect1_btn_9">
      <property name="minimumSize">
       <size>
        <width>240</width>
@@ -936,7 +936,7 @@ border-color: rgb(162, 162, 162);</string>
     </widget>
    </item>
    <item row="5" column="9">
-    <widget class="QPushButton" name="pushButton_10">
+    <widget class="QPushButton" name="collect1_btn_10">
      <property name="minimumSize">
       <size>
        <width>240</width>
@@ -968,7 +968,7 @@ border-color: rgb(162, 162, 162);</string>
     </spacer>
    </item>
    <item row="7" column="1">
-    <widget class="QPushButton" name="pushButton_11">
+    <widget class="QPushButton" name="collect1_btn_11">
      <property name="minimumSize">
       <size>
        <width>240</width>
@@ -984,7 +984,7 @@ border-color: rgb(162, 162, 162);</string>
     </widget>
    </item>
    <item row="7" column="3">
-    <widget class="QPushButton" name="pushButton_12">
+    <widget class="QPushButton" name="collect1_btn_12">
      <property name="minimumSize">
       <size>
        <width>240</width>
@@ -1000,7 +1000,7 @@ border-color: rgb(162, 162, 162);</string>
     </widget>
    </item>
    <item row="7" column="5">
-    <widget class="QPushButton" name="pushButton_13">
+    <widget class="QPushButton" name="collect1_btn_13">
      <property name="minimumSize">
       <size>
        <width>240</width>
@@ -1016,7 +1016,7 @@ border-color: rgb(162, 162, 162);</string>
     </widget>
    </item>
    <item row="7" column="7">
-    <widget class="QPushButton" name="pushButton_14">
+    <widget class="QPushButton" name="collect1_btn_14">
      <property name="minimumSize">
       <size>
        <width>240</width>
@@ -1032,7 +1032,7 @@ border-color: rgb(162, 162, 162);</string>
     </widget>
    </item>
    <item row="7" column="9">
-    <widget class="QPushButton" name="pushButton_15">
+    <widget class="QPushButton" name="collect1_btn_15">
      <property name="minimumSize">
       <size>
        <width>240</width>
