@@ -8,6 +8,7 @@ from PyQt5.QtWidgets import QWidget
 
 from views_mangers.textToTalk import TextToSpeech
 
+
 class ApiWorkerSignals(QtCore.QObject):
     finished = QtCore.pyqtSignal(dict)
     setButtonIcon = QtCore.pyqtSignal(object, str)
