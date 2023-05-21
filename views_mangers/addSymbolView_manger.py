@@ -14,6 +14,7 @@ class AddSymbolScreen(QtWidgets.QWidget, add_symbol_view.Ui_Form):
         self.upload_symbol_btn.clicked.connect(self.run)
         self.choose_file_btn.clicked.connect(self.getfiles)
         self.fileName = None
+        self.cp_collections = {}
         self.msg = QtWidgets.QMessageBox()
         self.msg.setStyleSheet("min-width: 20cm; ")
         self.load_collections()
@@ -25,6 +26,10 @@ class AddSymbolScreen(QtWidgets.QWidget, add_symbol_view.Ui_Form):
             response.raise_for_status()
             collections_data = response.json()
             collections = collections_data.get('results', [])
+
+            for collection in collections:
+                self.cp_collections[collection['name']] = collection['id']
+
             if isinstance(collections, list):
                 self.collection_combobox.addItems([collection['name'] for collection in collections])
             else:
@@ -44,14 +49,15 @@ class AddSymbolScreen(QtWidgets.QWidget, add_symbol_view.Ui_Form):
             self.msg.critical(self, "Error", "Please choose a file")
             self.getfiles(event=None)
         else:
+            collectionID = self.cp_collections.get(collection)
             data = {
                 "name": name,
-                "collection": collection,
+                "collection": collectionID,
                 "text_to_talk": text_to_talk,
             }
             try:
                 files = [
-                    ('symbol_image', (self.fileName, open(self.fileName, 'rb').read(), 'image/jpeg'))
+                    ('image', (self.fileName, open(self.fileName, 'rb').read(), 'image/jpeg'))
                 ]
                 self.uploadSymbol(data, files, headers)
             except Exception as filesError:
@@ -69,8 +75,7 @@ class AddSymbolScreen(QtWidgets.QWidget, add_symbol_view.Ui_Form):
                 self.fileName = None
             else:
                 response_data = response.json()
-                error_message = response_data.get("detail", "Unknown error")
-                self.msg.critical(self, "Error", f"Symbol upload failed: {error_message}")
+                self.msg.critical(self, "Error", f"Symbol upload failed: {response_data}")
         except Exception as e:
             self.msg.critical(self, "Error", f"Error in upload symbol {e}")
 
