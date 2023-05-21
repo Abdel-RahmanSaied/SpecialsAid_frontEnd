@@ -126,6 +126,7 @@ class SpecialsAid(QtWidgets.QStackedWidget):
     def handle_login(self, token):
         self.token = token
         self.addcollectionScreen.token = token
+        self.addSymbolScreen.token = token
         self.setCurrentIndex(4)
 
     def handleMainScreen(self):
