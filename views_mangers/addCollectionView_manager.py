@@ -5,7 +5,7 @@ import requests
 from PyQt5 import QtGui
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
-# from views_mangers.progrssBar import WaitingScreen
+from views_mangers.progrssBar import WaitingScreen
 
 
 class AddCollectionScreen(QtWidgets.QWidget, add_collection_view.Ui_Form):
@@ -48,16 +48,16 @@ class AddCollectionScreen(QtWidgets.QWidget, add_collection_view.Ui_Form):
             except Exception as filesError:
                 self.msg.critical(self, "Error", f"Error in files {filesError}")
             else:
-                # self.waitingScreen = WaitingScreen()
-                # self.waitingScreen.show()
-                # QtWidgets.QApplication.processEvents()  # Process pending events to update the waiting screen
+                self.waitingScreen = WaitingScreen()
+                self.waitingScreen.show()
+                QtWidgets.QApplication.processEvents()  # Process pending events to update the waiting screen
                 self.uploadCollection(data, files, headers)
 
     def uploadCollection(self, data, files, headers):
         url = f"{self.base_url}symbols/symbols_collection/"
         try:
             response = requests.post(url=url, data=data, files=files, headers=headers)
-            # self.waitingScreen.close()
+            self.waitingScreen.close()
         except requests.exceptions.RequestException as e:
             self.msg.critical(self, "Error", f"An error occurred while making the request with error code: {e}")
         else:
