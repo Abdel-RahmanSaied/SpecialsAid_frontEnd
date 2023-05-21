@@ -72,6 +72,12 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         # install collections buttons
         self.collecionsScreen.back_to_home_btn.clicked.connect(lambda: self.setCurrentIndex(1))
 
+        #install collections view buttons
+        self.collectionViewScreen.back_btn.clicked.connect(lambda : self.setCurrentIndex(2))
+        self.collectionViewScreen.delete_btn.clicked.connect(self.clearLblText)
+        self.collectionViewScreen.play_btn.clicked.connect(self.textToTalkFull)
+        self.collectionViewScreen.textSignal.connect(self.textToTalk)
+
         # install add collection buttons
         self.addcollectionScreen.back_to_home_btn.clicked.connect(lambda: self.setCurrentIndex(1))
         self.addcollectionScreen.add_symbol_btn.clicked.connect(lambda: self.setCurrentIndex(5))
@@ -100,13 +106,13 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         self.textToSpeech.speechText(text)
 
     def setLblText(self, obj):
-        lbl = self.findChild(QtWidgets.QLabel, obj)
-        lbl.setText(self.fullText)
+        self.collectionViewScreen.text_to_talk_lbl.setText(self.fullText)
+        self.mainScreen.text_to_talk_lbl.setText(self.fullText)
 
     def clearLblText(self):
-        lbl = self.findChild(QtWidgets.QLabel, 'text_to_talk_lbl')
         self.fullText = ""
-        lbl.setText(self.fullText)
+        self.collectionViewScreen.text_to_talk_lbl.setText(self.fullText)
+        self.mainScreen.text_to_talk_lbl.setText(self.fullText)
         self.textToSpeech.clearList()
 
     def textToTalkFull(self):

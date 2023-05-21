@@ -63,12 +63,19 @@ class CollectionScreen(QtWidgets.QWidget, collection_view.Ui_Form):
         self.loading = WaitingScreen()
         worker.signals.finished.connect(self.handleCollection)
         worker.signals.setButtonIcon.connect(self.setButtonIcon)
+        self.clearButtons()
         self.loading.show()
         self.threadpool.start(worker)
 
     def handleCollection(self, data):
-        for i in range(len(data['results'])):
-            self.btnList[i].clicked.connect(lambda ch, i=i: self.handleSymbolBtn(data['results'][i]['id'], data['results'][i]['text_to_talk']))
+        dataCount = [data['count'] if data['count'] < 15 else 15][0]
+        for i in range(dataCount):
+            btn = self.btnList[i]
+            # try :
+            #     btn.clicked.disconnect()
+            # except:
+            #     pass
+            btn.clicked.connect(lambda ch, i=i: self.handleSymbolBtn(data['results'][i]['id'], data['results'][i]['text_to_talk']))
             self.threadpool.globalInstance().findChild(QtCore.QThreadPool, 'globalInstance')
             self.threadpool.start(
                 lambda i=i: self.setButtonIcon(self.btnList[i], data['results'][i]['image']))
@@ -94,8 +101,16 @@ class CollectionScreen(QtWidgets.QWidget, collection_view.Ui_Form):
 
     def handleSymbolBtn(self, id, textToTalk):
         self.sendTextSignal(textToTalk)
-        print(id)
-        print(textToTalk)
+
+
+    def clearButtons(self):
+        for btn in self.btnList:
+            btn.setIcon(QIcon())
+            btn.setIconSize(QtCore.QSize(180, 180))
+            try:
+                btn.clicked.disconnect()
+            except:
+                pass
 
 
 

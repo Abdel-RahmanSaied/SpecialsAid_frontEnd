@@ -89,7 +89,8 @@ class MainViewScreen(QtWidgets.QWidget, main_view.Ui_Form):
 
 
     def handleCollection(self, data):
-        for i in range(9):
+        dataCount = [data['count'] if data['count'] < 9 else 9][0]
+        for i in range(dataCount):
             self.btnList[i].clicked.connect(lambda ch, i=i: self.handleCollectionBtn(data['results'][i]['id']))
             self.threadpool.globalInstance().findChild(QtCore.QThreadPool, 'globalInstance')
             self.threadpool.start(
