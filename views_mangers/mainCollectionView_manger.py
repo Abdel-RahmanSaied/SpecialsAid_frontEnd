@@ -8,6 +8,7 @@ from PyQt5.QtWidgets import QWidget
 
 from views_mangers.textToTalk import TextToSpeech
 
+
 class ApiWorkerSignals(QtCore.QObject):
     finished = QtCore.pyqtSignal(dict)
     setButtonIcon = QtCore.pyqtSignal(object, str)
@@ -18,15 +19,21 @@ class ApiWorker(QtCore.QRunnable):
         super(ApiWorker, self).__init__()
         self.url = url
         self.signals = ApiWorkerSignals()
+        self.msg = QtWidgets.QMessageBox()
 
     def run(self):
-        data = self.getUrlData(self.url)
-        self.signals.finished.emit(data)
+        data, _ = self.getUrlData(self.url)
+        if _:
+            self.signals.finished.emit(data)
 
     def getUrlData(self, url):
-        response = requests.get(url)
-        data = response.json()
-        return data
+        try:
+            response = requests.get(url)
+            data = response.json()
+            return data, True
+        except (requests.ConnectionError, requests.Timeout) as exception:
+            print(exception)
+            self.msg.critical(None, "Error", "No internet connection.")
 
     def get_image(self, url):
         response = requests.get(url)
@@ -77,16 +84,18 @@ class MainViewScreen(QtWidgets.QWidget, main_view.Ui_Form):
 
     def handleIbtn(self):
         self.sendTextSignal('i')
+
     def handleIWant_btn(self):
         self.sendTextSignal('want')
+
     def handleIDontWant_btn(self):
         self.sendTextSignal('dont want')
 
     def handleYes_btn(self):
         self.sendTextSignal('yes')
+
     def handleNo_btn(self):
         self.sendTextSignal('no')
-
 
     def handleCollection(self, data):
         dataCount = [data['count'] if data['count'] < 9 else 9][0]
