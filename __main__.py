@@ -87,7 +87,7 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         self.addSymbolScreen.add_collection_btn.clicked.connect(lambda: self.setCurrentIndex(4))
 
         # install my symbols buttons
-        self.mySymbolsScreen.pushButton_33.clicked.connect(lambda: self.setCurrentIndex(1))
+        self.mySymbolsScreen.back_btn.clicked.connect(lambda: self.setCurrentIndex(1))
 
         # install play button
         self.mainScreen.play_btn.clicked.connect(self.textToTalkFull)
@@ -97,6 +97,7 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         # install text to talk signals
         self.mainScreen.textSignal.connect(self.textToTalk)
         self.mainScreen.collectionIDSignal.connect(self.handleMainToCollection)
+        self.mySymbolsScreen.symbolIDSignal.connect(self.handleMySymbols)
         # self.mainScreen.textToTalkFullSignal.connect(self.textToTalkFull)
         # self.mainScreen.clearTextToTalkSignal.connect(self.clearTextToTalk)
 
@@ -146,6 +147,12 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         self.collectionViewScreen.collectionID = collectionID
         self.collectionViewScreen.run()
         self.setCurrentIndex(7)
+
+    def handleMySymbols(self, symbolID):
+        if self.mainScreen.firstTime:
+            self.mainScreen.run()
+            self.mainScreen.firstTime = False
+        self.setCurrentIndex(6)
 
     def handleEndTutorial(self):
         self.handleHomeScreen()
