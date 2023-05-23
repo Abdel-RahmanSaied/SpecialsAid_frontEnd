@@ -44,12 +44,15 @@ class MySymbolsScreen(QtWidgets.QWidget, my_symbols_view.Ui_Form):
         self.setupUi(self)
         self.base_url = "https://specialaid.pythonanywhere.com/"
         self.firstTime = True
-        self.symbol_frame = self.frame_2
+        self.symbol_frame = self.frame
         self.symbol_icon = self.symbol_icon_btn
         self.symbol_label = self.label_2
         self.threadpool = QtCore.QThreadPool()
-
+        self.dataCount = 0
+        self.num_of_copies = 0
         self.run()
+        self.copied_frames = []
+        self.create_copies_of_frame()
 
     def run(self):
         worker = ApiWorker(self.base_url + "symbols/symbols/")
@@ -61,8 +64,8 @@ class MySymbolsScreen(QtWidgets.QWidget, my_symbols_view.Ui_Form):
 
     def handleSymbols(self, data):
         print(data)
-        dataCount = data['count']
-        print(dataCount)
+        self.dataCount = data['count']
+        print(data['count'])
         # for i in range(dataCount):
         #     self.symbol_icon.clicked.connect(lambda ch, i=i: self.handleCollectionBtn(data['results'][i]['id']))
         #     self.threadpool.globalInstance().findChild(QtCore.QThreadPool, 'globalInstance')
@@ -71,19 +74,21 @@ class MySymbolsScreen(QtWidgets.QWidget, my_symbols_view.Ui_Form):
         #     self.threadpool.start(lambda i = i: self.setTextLabel(self.symbol_label[i], data['results'][i]['name']))
         self.loading.close()
 
-    def add_frame(self):
-        new_frame = self.symbol_frame.clone()
+    def create_copies_of_frame(self):
+        original_stylesheet = self.symbol_frame.styleSheet()
         for i in range(self.dataCount):
-            new_frame(i).setObjectName("symbol_frame{}".format(i))
+            copied_frame = self.create_frame_copy()
+            copied_frame.setStyleSheet(original_stylesheet)
+            self.copied_frames.append(copied_frame)
+        print(len(self.copied_frames))
+        return self.copied_frames
 
-        # def frame_copy(frame, self,):
-    #     original_stylesheet =self.symbol_frame.styleSheet()
-    #     copied_frames = []
-    #     for i in range(self.handleSymbols.num_data):
-    #         new_frame = self.symbol_frame.clone()
-    #         new_frame.setObjectName("symbol_frame{}".format(i))
-    #         new_frame.setStyleSheet(original_stylesheet)
-    #         # Copy child widgets from the original frame to the new frame
+    def create_frame_copy(self):
+        copied_frame = QtWidgets.QFrame(self.scrollArea)
+        copied_frame.setGeometry(self.symbol_frame.geometry())
+        copied_frame.setStyleSheet(self.symbol_frame.styleSheet())
+        return copied_frame
+
     def setButtonIcon(self, btn, url):
         photo = self.get_image(url)
         icon = QIcon(photo)
