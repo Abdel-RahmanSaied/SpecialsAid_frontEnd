@@ -49,6 +49,8 @@ class MySymbolsScreen(QtWidgets.QWidget, my_symbols_view.Ui_Form):
         self.symbol_label = self.label_2
         self.threadpool = QtCore.QThreadPool()
 
+        self.run()
+
     def run(self):
         worker = ApiWorker(self.base_url + "symbols/symbols/")
         worker.setAutoDelete(True)
@@ -59,14 +61,14 @@ class MySymbolsScreen(QtWidgets.QWidget, my_symbols_view.Ui_Form):
 
     def handleSymbols(self, data):
         print(data)
-        dataCount = [data['count']][0]
-        print (dataCount)
-        for i in range(dataCount):
-            self.symbol_icon.clicked.connect(lambda ch, i=i: self.handleCollectionBtn(data['results'][i]['id']))
-            self.threadpool.globalInstance().findChild(QtCore.QThreadPool, 'globalInstance')
-            self.threadpool.start(
-                lambda i = i: self.setButtonIcon(self.symbol_icon[i], data['results'][i]['image']))
-            self.threadpool.start(lambda i = i: self.setTextLabel(self.symbol_label[i], data['results'][i]['name']))
+        dataCount = data['count']
+        print(dataCount)
+        # for i in range(dataCount):
+        #     self.symbol_icon.clicked.connect(lambda ch, i=i: self.handleCollectionBtn(data['results'][i]['id']))
+        #     self.threadpool.globalInstance().findChild(QtCore.QThreadPool, 'globalInstance')
+        #     self.threadpool.start(
+        #         lambda i = i: self.setButtonIcon(self.symbol_icon[i], data['results'][i]['image']))
+        #     self.threadpool.start(lambda i = i: self.setTextLabel(self.symbol_label[i], data['results'][i]['name']))
         self.loading.close()
 
     def add_frame(self):
