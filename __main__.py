@@ -99,7 +99,7 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         self.mainScreen.textSignal.connect(self.textToTalk)
         self.mainScreen.collectionIDSignal.connect(self.handleMainToCollection)
         self.mySymbolsScreen.symbolIDSignal.connect(self.handleMySymbols)
-        self.collecionsScreen.collectionsIDSignal.connect(self.handleCollections)
+        self.collecionsScreen.collectionsIDSignal.connect(self.handleMainToCollection)
         # self.mainScreen.textToTalkFullSignal.connect(self.textToTalkFull)
         # self.mainScreen.clearTextToTalkSignal.connect(self.clearTextToTalk)
 
@@ -145,18 +145,11 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         self.setCurrentIndex(2)
         self.clear_login()
 
-    def handleMainToCollection(self, collectionID,data,id):
+    def handleMainToCollection(self, collectionID):
         self.collectionViewScreen.collectionID = collectionID
-        self.collectionViewScreen.data = data
-        self.collectionViewScreen.id = id
-        self.collectionViewScreen.collection_name_lbl.setText(data['name'])
         self.collectionViewScreen.run()
         self.setCurrentIndex(7)
 
-    def handleCollections(self, collectionID):
-        self.collectionViewScreen.collectionID = collectionID
-        self.collectionViewScreen.run()
-        self.setCurrentIndex(7)
 
     def handleMySymbols(self, symbolID):
         if self.mainScreen.firstTime:
