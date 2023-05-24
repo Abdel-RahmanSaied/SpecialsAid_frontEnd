@@ -65,14 +65,15 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         self.homeScreen.me_btn.clicked.connect(self.handleMainScreen)
         self.homeScreen.loginAcceptedSignal.connect(self.handle_login)
         self.homeScreen.symbols_btn.clicked.connect(lambda: self.setCurrentIndex(6))
+        self.homeScreen.collections_btn.clicked.connect(lambda: self.setCurrentIndex(3))
 
         # install main buttons
         self.mainScreen.back_btn.clicked.connect(lambda: self.setCurrentIndex(1))
 
-        # install collections buttons
-        self.collecionsScreen.back_to_home_btn.clicked.connect(lambda: self.setCurrentIndex(1))
+        # install collections view buttons
+        self.collecionsScreen.back_to_home_btn_2.clicked.connect(lambda: self.setCurrentIndex(1))
 
-        #install collections view buttons
+        #install collection view buttons
         self.collectionViewScreen.back_btn.clicked.connect(lambda : self.setCurrentIndex(2))
         self.collectionViewScreen.delete_btn.clicked.connect(self.clearLblText)
         self.collectionViewScreen.play_btn.clicked.connect(self.textToTalkFull)
@@ -98,6 +99,7 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         self.mainScreen.textSignal.connect(self.textToTalk)
         self.mainScreen.collectionIDSignal.connect(self.handleMainToCollection)
         self.mySymbolsScreen.symbolIDSignal.connect(self.handleMySymbols)
+        self.collecionsScreen.collectionsIDSignal.connect(self.handleCollections)
         # self.mainScreen.textToTalkFullSignal.connect(self.textToTalkFull)
         # self.mainScreen.clearTextToTalkSignal.connect(self.clearTextToTalk)
 
@@ -143,7 +145,15 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         self.setCurrentIndex(2)
         self.clear_login()
 
-    def handleMainToCollection(self, collectionID):
+    def handleMainToCollection(self, collectionID,data,id):
+        self.collectionViewScreen.collectionID = collectionID
+        self.collectionViewScreen.data = data
+        self.collectionViewScreen.id = id
+        self.collectionViewScreen.collection_name_lbl.setText(data['name'])
+        self.collectionViewScreen.run()
+        self.setCurrentIndex(7)
+
+    def handleCollections(self, collectionID):
         self.collectionViewScreen.collectionID = collectionID
         self.collectionViewScreen.run()
         self.setCurrentIndex(7)
@@ -153,6 +163,7 @@ class SpecialsAid(QtWidgets.QStackedWidget):
             self.mainScreen.run()
             self.mainScreen.firstTime = False
         self.setCurrentIndex(6)
+
 
     def handleEndTutorial(self):
         self.handleHomeScreen()

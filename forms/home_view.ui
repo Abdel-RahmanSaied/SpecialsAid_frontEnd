@@ -725,7 +725,7 @@ QPushButton:hover{
       <widget class="QPushButton" name="symbols_btn">
        <property name="geometry">
         <rect>
-         <x>215</x>
+         <x>270</x>
          <y>240</y>
          <width>81</width>
          <height>21</height>
@@ -786,6 +786,34 @@ QPushButton:hover{
        </property>
        <property name="placeholderText">
         <string>Password</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="collections_btn">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>240</y>
+         <width>101</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">	*{
+	border-color: rgb(255, 255, 255,0);
+
+	color: rgb(28, 113, 216);
+	background-color: rgb(53, 132, 228,0);}
+QPushButton:hover{
+
+	color: rgb(153, 193, 241);
+}
+</string>
+       </property>
+       <property name="text">
+        <string>collections</string>
        </property>
       </widget>
      </widget>
