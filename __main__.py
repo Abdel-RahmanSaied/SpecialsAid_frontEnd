@@ -64,8 +64,8 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         # install home buttons
         self.homeScreen.me_btn.clicked.connect(self.handleMainScreen)
         self.homeScreen.loginAcceptedSignal.connect(self.handle_login)
-        self.homeScreen.symbols_btn.clicked.connect(lambda: self.setCurrentIndex(6))
-        self.homeScreen.collections_btn.clicked.connect(lambda: self.setCurrentIndex(3))
+        self.homeScreen.symbols_btn.clicked.connect(self.handle_home_to_my_symbols)
+        self.homeScreen.collections_btn.clicked.connect(self.handle_home_to_collections)
 
         # install main buttons
         self.mainScreen.back_btn.clicked.connect(lambda: self.setCurrentIndex(1))
@@ -82,11 +82,11 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         # install add collection buttons
         self.addcollectionScreen.refreshSignal.connect(self.handleRefresh)
         self.addcollectionScreen.back_to_home_btn.clicked.connect(lambda: self.setCurrentIndex(1))
-        self.addcollectionScreen.add_symbol_btn.clicked.connect(lambda: self.setCurrentIndex(5))
+        self.addcollectionScreen.add_symbol_btn.clicked.connect(self.handle_add_collections_to_add_symbol)
 
         # install add symbol buttons and signals
         self.addSymbolScreen.back_to_home_btn.clicked.connect(lambda: self.setCurrentIndex(1))
-        self.addSymbolScreen.add_collection_btn.clicked.connect(lambda: self.setCurrentIndex(4))
+        self.addSymbolScreen.add_collection_btn.clicked.connect(self.handle_add_symbol_to_add_collection)
 
         # install my symbols buttons
         self.mySymbolsScreen.back_btn.clicked.connect(lambda: self.setCurrentIndex(1))
@@ -135,6 +135,18 @@ class SpecialsAid(QtWidgets.QStackedWidget):
 
     def handleHomeScreen(self):
         self.setCurrentIndex(1)
+
+    def handle_home_to_my_symbols(self):
+        self.setCurrentIndex(6)
+
+    def handle_home_to_collections(self):
+        self.setCurrentIndex(3)
+
+    def handle_add_collections_to_add_symbol(self):
+        self.setCurrentIndex(5)
+
+    def handle_add_symbol_to_add_collection(self):
+        self.setCurrentIndex(4)
 
     def handle_login(self, token):
         self.token = token
