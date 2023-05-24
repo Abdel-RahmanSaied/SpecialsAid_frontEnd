@@ -45,7 +45,6 @@ class MySymbolsScreen(QtWidgets.QWidget, my_symbols_view.Ui_Form):
         self.base_url = "https://specialaid.pythonanywhere.com/"
         self.firstTime = True
         self.threadpool = QtCore.QThreadPool()
-        self.run()
 
     def run(self):
         worker = ApiWorker(self.base_url + "symbols/symbols/")
@@ -69,10 +68,8 @@ class MySymbolsScreen(QtWidgets.QWidget, my_symbols_view.Ui_Form):
     #     self.loading.close()
 
     def handleFrameContent(self, data):
-        print(data)
         dataCount = data['count']
         for id in range(dataCount):
-            print(data['results'][id])
             frame = self.addFrame(id)
             layoutWidget = self.addLayoutWidget(frame, id)
             gridLayout = self.addGridLayout(layoutWidget, id)
@@ -155,7 +152,6 @@ class MySymbolsScreen(QtWidgets.QWidget, my_symbols_view.Ui_Form):
 
     def handleCollectionBtn(self, id):
         self.symbolIDSignal.emit(id)
-        print(id)
 
     def get_image(self, url):
         response = requests.get(url)

@@ -5,7 +5,7 @@ import requests
 
 
 class AddSymbolScreen(QtWidgets.QWidget, add_symbol_view.Ui_Form):
-
+    refreshSignal_Symbol = pyqtSignal()
     def __init__(self):
         super(AddSymbolScreen, self).__init__()
         self.setupUi(self)
@@ -62,6 +62,7 @@ class AddSymbolScreen(QtWidgets.QWidget, add_symbol_view.Ui_Form):
                 self.uploadSymbol(data, files, headers)
             except Exception as filesError:
                 self.msg.critical(self, "Error", f"Error in files {filesError}")
+            self.refreshSignal_Symbol.emit()
 
     def uploadSymbol(self, data, files, headers):
         url = f"{self.base_url}symbols/symbols/"

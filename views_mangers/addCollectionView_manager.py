@@ -10,7 +10,7 @@ from views_mangers.progrssBar import WaitingScreen
 
 class AddCollectionScreen(QtWidgets.QWidget, add_collection_view.Ui_Form):
     loginAcceptedSignal = QtCore.pyqtSignal()
-    refreshSignal = QtCore.pyqtSignal()
+    refreshSignal_collections = QtCore.pyqtSignal()
 
     def __init__(self):
         super(AddCollectionScreen, self).__init__()
@@ -19,7 +19,7 @@ class AddCollectionScreen(QtWidgets.QWidget, add_collection_view.Ui_Form):
         self.token = ''
         self.upload_collection_btn.clicked.connect(self.run)
         self.choose_file_btn.clicked.connect(self.getfiles)
-        self.firstTime = True
+        self.firstTime = False
         self.fileName = None
 
         self.msg = QtWidgets.QMessageBox()
@@ -53,7 +53,7 @@ class AddCollectionScreen(QtWidgets.QWidget, add_collection_view.Ui_Form):
                 self.waitingScreen.show()
                 QtWidgets.QApplication.processEvents()  # Process pending events to update the waiting screen
                 self.uploadCollection(data, files, headers)
-                self.refreshSignal.emit()
+                self.refreshSignal_collections.emit()
 
     def uploadCollection(self, data, files, headers):
         url = f"{self.base_url}symbols/symbols_collection/"
@@ -74,7 +74,7 @@ class AddCollectionScreen(QtWidgets.QWidget, add_collection_view.Ui_Form):
 
     def getfiles(self, event):
         self.fileName, _ = QtWidgets.QFileDialog.getOpenFileName(self, 'Single File', '',
-                                                                 'Images (*.png, *.jpeg , *.jpg) ')
+                                                                 'Images (*.png *.jpeg *.jpg)')
         if not self.fileName:
             self.msg.critical(self, "Error", "Please choose a file")
             self.collection_location_lin.setText("Please choose a file")

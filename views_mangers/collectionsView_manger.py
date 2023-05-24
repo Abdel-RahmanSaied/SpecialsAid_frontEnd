@@ -45,7 +45,6 @@ class CollectionsScreen(QtWidgets.QWidget, collections_view.Ui_Form):
         self.base_url = "https://specialaid.pythonanywhere.com/"
         self.firstTime = True
         self.threadpool = QtCore.QThreadPool()
-        self.run()
 
     def run(self):
         worker = ApiWorker(self.base_url + "symbols/symbols_collection/")
@@ -56,10 +55,8 @@ class CollectionsScreen(QtWidgets.QWidget, collections_view.Ui_Form):
         self.threadpool.start(worker)
 
     def handleFrameContent(self, data):
-        print(data)
         dataCount = data['count']
         for id in range(dataCount):
-            print(data['results'][id])
             frame = self.addFrame(id)
             layoutWidget = self.addLayoutWidget(frame, id)
             gridLayout = self.addGridLayout(layoutWidget, id)
@@ -135,7 +132,6 @@ class CollectionsScreen(QtWidgets.QWidget, collections_view.Ui_Form):
 
     def handleCollectionBtn(self, id):
         self.collectionsIDSignal.emit(id)
-        print(id)
 
     def get_image(self, url):
         response = requests.get(url)

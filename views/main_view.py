@@ -556,6 +556,7 @@ class Ui_Form(object):
         font.setWeight(75)
         self.text_to_talk_lbl.setFont(font)
         self.text_to_talk_lbl.setStyleSheet("background-color: rgb(255, 255, 255,0);")
+        self.text_to_talk_lbl.setText("")
         self.text_to_talk_lbl.setObjectName("text_to_talk_lbl")
         self.gridLayout.addWidget(self.text_to_talk_lbl, 1, 1, 1, 1)
         self.gridLayout_18.addWidget(self.frame, 1, 0, 1, 12)
@@ -959,7 +960,6 @@ class Ui_Form(object):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
         self.collection_name_lbl.setText(_translate("Form", "MAIN"))
-        self.text_to_talk_lbl.setText(_translate("Form", "TextLabel"))
         self.label.setText(_translate("Form", "I"))
         self.textCollection_lbl.setText(_translate("Form", "TextLabel"))
         self.textCollection_lbl_2.setText(_translate("Form", "TextLabel"))

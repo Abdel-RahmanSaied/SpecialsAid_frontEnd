@@ -80,11 +80,12 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         self.collectionViewScreen.textSignal.connect(self.textToTalk)
 
         # install add collection buttons
-        self.addcollectionScreen.refreshSignal.connect(self.handleRefresh)
+        self.addcollectionScreen.refreshSignal_collections.connect(self.handleRefreshCollections)
         self.addcollectionScreen.back_to_home_btn.clicked.connect(lambda: self.setCurrentIndex(1))
         self.addcollectionScreen.add_symbol_btn.clicked.connect(self.handle_add_collections_to_add_symbol)
 
         # install add symbol buttons and signals
+        self.addSymbolScreen.refreshSignal_Symbol.connect(self.handleRefreshSymbols)
         self.addSymbolScreen.back_to_home_btn.clicked.connect(lambda: self.setCurrentIndex(1))
         self.addSymbolScreen.add_collection_btn.clicked.connect(self.handle_add_symbol_to_add_collection)
 
@@ -130,16 +131,25 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         fullText += " " + text
         self.text_to_talk_lbl.setText(fullText)
 
-    def handleRefresh(self):
-        self.mainScreen.firstTime = True
+    def handleRefreshCollections(self):
+        self.collecionsScreen.firstTime = True
+
+    def handleRefreshSymbols(self):
+        self.addSymbolScreen.firstTime = True
 
     def handleHomeScreen(self):
         self.setCurrentIndex(1)
 
     def handle_home_to_my_symbols(self):
+        if self.mySymbolsScreen.firstTime:
+            self.mySymbolsScreen.run()
+            self.mySymbolsScreen.firstTime = False
         self.setCurrentIndex(6)
 
     def handle_home_to_collections(self):
+        if self.collecionsScreen.firstTime:
+            self.collecionsScreen.run()
+            self.collecionsScreen.firstTime = False
         self.setCurrentIndex(3)
 
     def handle_add_collections_to_add_symbol(self):
