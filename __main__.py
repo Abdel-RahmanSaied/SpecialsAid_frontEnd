@@ -80,10 +80,11 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         self.collectionViewScreen.textSignal.connect(self.textToTalk)
 
         # install add collection buttons
+        self.addcollectionScreen.refreshSignal.connect(self.handleRefresh)
         self.addcollectionScreen.back_to_home_btn.clicked.connect(lambda: self.setCurrentIndex(1))
         self.addcollectionScreen.add_symbol_btn.clicked.connect(lambda: self.setCurrentIndex(5))
 
-        # install add symbol buttons
+        # install add symbol buttons and signals
         self.addSymbolScreen.back_to_home_btn.clicked.connect(lambda: self.setCurrentIndex(1))
         self.addSymbolScreen.add_collection_btn.clicked.connect(lambda: self.setCurrentIndex(4))
 
@@ -128,6 +129,9 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         fullText = self.text_to_talk_lbl.text()
         fullText += " " + text
         self.text_to_talk_lbl.setText(fullText)
+
+    def handleRefresh(self):
+        self.mainScreen.firstTime = True
 
     def handleHomeScreen(self):
         self.setCurrentIndex(1)
