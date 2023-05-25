@@ -52,6 +52,9 @@ class CollectionScreen(QtWidgets.QWidget, collection_view.Ui_Form):
             self.collect1_btn_10, self.collect1_btn_11, self.collect1_btn_12, self.collect1_btn_13,
             self.collect1_btn_14, self.collect1_btn_14
         ]
+        self.lblList = [
+
+        ]
 
         # self.run()
 
@@ -79,7 +82,7 @@ class CollectionScreen(QtWidgets.QWidget, collection_view.Ui_Form):
             self.threadpool.globalInstance().findChild(QtCore.QThreadPool, 'globalInstance')
             self.threadpool.start(
                 lambda i=i: self.setButtonIcon(self.btnList[i], data['results'][i]['image']))
-            # self.threadpool.start(lambda i=i: self.setTextLabel(self.labelsList[i], data['results'][i]['name']))
+            self.threadpool.start(lambda i=i: self.setTextLabel(self.labelsList[i], data['results'][i]['name']))
         self.loading.close()
 
     def setButtonIcon(self, btn, url):
