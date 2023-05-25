@@ -775,7 +775,7 @@ border-color: rgb(255, 255, 255,0);</string>
        </spacer>
       </item>
       <item row="2" column="0">
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="textCollection_lbl_10">
         <property name="text">
          <string>TextLabel</string>
         </property>
@@ -1037,7 +1037,7 @@ border-color: rgb(255, 255, 255,0);</string>
        </spacer>
       </item>
       <item row="2" column="0">
-       <widget class="QLabel" name="label_5">
+       <widget class="QLabel" name="textCollection_lbl_11">
         <property name="text">
          <string>TextLabel</string>
         </property>
@@ -1200,7 +1200,7 @@ border-color: rgb(255, 255, 255,0);</string>
        </spacer>
       </item>
       <item row="2" column="0">
-       <widget class="QLabel" name="label_7">
+       <widget class="QLabel" name="textCollection_lbl_12">
         <property name="text">
          <string>TextLabel</string>
         </property>
@@ -1462,7 +1462,7 @@ border-color: rgb(255, 255, 255,0);</string>
        </spacer>
       </item>
       <item row="2" column="0">
-       <widget class="QLabel" name="label_6">
+       <widget class="QLabel" name="textCollection_lbl_13">
         <property name="text">
          <string>TextLabel</string>
         </property>
@@ -1548,7 +1548,7 @@ border-color: rgb(255, 255, 255,0);</string>
        </spacer>
       </item>
       <item row="2" column="0">
-       <widget class="QLabel" name="label_11">
+       <widget class="QLabel" name="textCollection_lbl_14">
         <property name="text">
          <string>TextLabel</string>
         </property>
@@ -1810,7 +1810,7 @@ border-color: rgb(255, 255, 255,0);</string>
        </spacer>
       </item>
       <item row="2" column="0">
-       <widget class="QLabel" name="label_12">
+       <widget class="QLabel" name="textCollection_lbl_15">
         <property name="text">
          <string>TextLabel</string>
         </property>
