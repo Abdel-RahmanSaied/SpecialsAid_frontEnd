@@ -32,7 +32,6 @@ class AddCollectionScreen(QtWidgets.QWidget, add_collection_view.Ui_Form):
 
         if not name:
             self.msg.critical(self, "Error", "Please enter a name")
-
         elif not self.fileName:
             self.msg.critical(self, "Error", "Please choose a file")
             self.getfiles(event=None)
@@ -54,7 +53,6 @@ class AddCollectionScreen(QtWidgets.QWidget, add_collection_view.Ui_Form):
                 QtWidgets.QApplication.processEvents()  # Process pending events to update the waiting screen
                 self.uploadCollection(data, files, headers)
                 self.refreshSignal_collections.emit()
-
     def uploadCollection(self, data, files, headers):
         url = f"{self.base_url}symbols/symbols_collection/"
         try:

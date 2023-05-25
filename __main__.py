@@ -1,5 +1,5 @@
 import json
-
+import os
 from views_mangers.welcomeView_Manger import WelcomeScreen
 from views_mangers.homeView_manger import HomeScreen
 from views_mangers.mainCollectionView_manger import MainViewScreen
@@ -22,7 +22,8 @@ from setting import styleSheets
 class SpecialsAid(QtWidgets.QStackedWidget):
     def __init__(self, name=None, *args, **kwargs):
         super(SpecialsAid, self).__init__()
-
+        self.setting_dir = os.path.join( os.getcwd(), "setting", "setting.json")
+        print(self.setting_dir)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/icons/icons/7069717.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.setWindowIcon(icon)
@@ -58,8 +59,11 @@ class SpecialsAid(QtWidgets.QStackedWidget):
         # install welcome signals
 
         self.welcomeScreen.DoneSignal.connect(self.handleEndTutorial)
-        if not self.inToutorialMode():
-            self.handleHomeScreen()
+        try:
+            if not self.inToutorialMode():
+                self.handleHomeScreen()
+        except Exception as e:
+            print(e)
 
         # install home buttons
         self.homeScreen.me_btn.clicked.connect(self.handleMainScreen)
@@ -152,6 +156,7 @@ class SpecialsAid(QtWidgets.QStackedWidget):
             self.collecionsScreen.firstTime = False
         self.setCurrentIndex(3)
 
+
     def handle_add_collections_to_add_symbol(self):
         self.setCurrentIndex(5)
 
@@ -186,7 +191,7 @@ class SpecialsAid(QtWidgets.QStackedWidget):
 
     def handleEndTutorial(self):
         self.handleHomeScreen()
-        with open('setting/setting.json', ) as file:
+        with open(self.setting_dir, ) as file:
             setting = json.load(file)
             setting['inStartupMode'] = False
         # Write updated setting back to file
@@ -194,7 +199,7 @@ class SpecialsAid(QtWidgets.QStackedWidget):
             json.dump(setting, file)
 
     def inToutorialMode(self):
-        with open('setting/setting.json', ) as s:
+        with open(self.setting_dir, ) as s:
             setting = json.load(s)
         return setting.get('inStartupMode')
 

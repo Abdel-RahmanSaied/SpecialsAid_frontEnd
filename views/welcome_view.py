@@ -15,10 +15,9 @@ class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(1089, 779)
-        Form.setStyleSheet("*{    background-color:#2864bd;\n"
-"}\n"
-"QFormWindow {\n"
-"    background-color:#2864bd;\n"
+        Form.setStyleSheet("\n"
+"QWidget {\n"
+" background-color:#2864bd;\n"
 "}\n"
 "QPushButton, QToolButton, QCommandLinkButton{\n"
 "    padding: 0 5px 0 5px;\n"
@@ -302,12 +301,12 @@ class Ui_Form(object):
 "    background-color: #e0e0e0;\n"
 "}\n"
 "QTabWidget {\n"
-"    color:rgb(0,0,0);\n"
-"    background-color:#000000;\n"
+"    color:rgb(0,0,0,0);\n"
+"    background-color:rgb(0,0,0,0);\n"
 "}\n"
 "QTabWidget::pane {\n"
-"    border-color: #050a0e;\n"
-"    background-color: #e0e0e0;\n"
+"    border-color: rgb(0,0,0,0);\n"
+"    background-color: rgb(0,0,0,0);\n"
 "    border-width: 1px;\n"
 "    border-radius: 4px;\n"
 "    position: absolute;\n"
@@ -323,7 +322,6 @@ class Ui_Form(object):
 "    border-bottom: 1px solid #c0c0c0;\n"
 "    padding: 3px;\n"
 "    color: #272727;\n"
-"    background-color: #fefefc;\n"
 "    margin-left:0px;\n"
 "}\n"
 "QTabBar::tab:!last {\n"
@@ -340,8 +338,8 @@ class Ui_Form(object):
 "    border-bottom-right-radius: 4px;\n"
 "}\n"
 "QTabBar::tab:selected, QTabBar::tab:last:selected, QTabBar::tab:hover {\n"
-"    color: #FFFFFF;\n"
-"    background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 #84afe5, stop:1 #1168e4);\n"
+"    color: #a0a6ac;\n"
+"    background-color:#003171;\n"
 "}\n"
 "QRadioButton::indicator {\n"
 "    height: 14px;\n"
@@ -454,7 +452,8 @@ class Ui_Form(object):
         self.tabWidget.setMinimumSize(QtCore.QSize(400, 0))
         self.tabWidget.setMaximumSize(QtCore.QSize(400, 16777215))
         self.tabWidget.setStyleSheet("background-color:#d5dce0;\n"
-"border-radius:20% 20%;")
+"border-radius:10% 10%;\n"
+"")
         self.tabWidget.setObjectName("tabWidget")
         self.tab = QtWidgets.QWidget()
         self.tab.setObjectName("tab")

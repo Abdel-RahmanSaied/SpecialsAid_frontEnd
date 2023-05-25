@@ -17,10 +17,10 @@ class Ui_Form(object):
         Form.resize(1920, 1317)
         Form.setMaximumSize(QtCore.QSize(1920, 1920))
         Form.setStyleSheet("\n"
-"QMainWindow {\n"
-"    background-color:#f5f5f5;\n"
+"QWidget {\n"
+"    background-color: rgb(243, 245, 249);\n"
 "}\n"
-"QPushButton, QToolButton, QCommandLinkButton, QFrame{\n"
+"QPushButton, QToolButton, QCommandLinkButton{\n"
 "    padding: 0 5px 0 5px;\n"
 "    border-style: solid;\n"
 "    border-top-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #c1c9cf, stop:1 #d2d8dd);\n"
@@ -449,9 +449,8 @@ class Ui_Form(object):
         self.frame_2 = QtWidgets.QFrame(Form)
         self.frame_2.setMinimumSize(QtCore.QSize(0, 80))
         self.frame_2.setMaximumSize(QtCore.QSize(16777215, 80))
-        self.frame_2.setStyleSheet("background-color: #38474f;\n"
-"border-radius:5% 5%;\n"
-"border-color: rgb(255, 255, 255,0);")
+        self.frame_2.setStyleSheet("background-color:rgb(0,49,113,255);\n"
+"border-radius:5% 5%;")
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_2.setObjectName("frame_2")

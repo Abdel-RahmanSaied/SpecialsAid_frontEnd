@@ -16,8 +16,8 @@ class Ui_Form(object):
         Form.setObjectName("Form")
         Form.resize(1220, 844)
         Form.setStyleSheet("\n"
-"QMainWindow {\n"
-"    background-color:#f5f5f5;\n"
+"QWidget {\n"
+"    background-color: rgb(243, 245, 249);\n"
 "}\n"
 "QPushButton, QToolButton, QCommandLinkButton{\n"
 "    padding: 0 5px 0 5px;\n"
@@ -452,29 +452,16 @@ class Ui_Form(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 788, 692))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 788, 738))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.gridLayout_3 = QtWidgets.QGridLayout(self.scrollAreaWidgetContents)
         self.gridLayout_3.setObjectName("gridLayout_3")
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
-        self.gridLayout.addWidget(self.scrollArea, 2, 1, 2, 2)
-        spacerItem = QtWidgets.QSpacerItem(37, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout.addItem(spacerItem, 2, 0, 1, 1)
-        spacerItem1 = QtWidgets.QSpacerItem(91, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout.addItem(spacerItem1, 3, 3, 1, 1)
-        self.search_lin = QtWidgets.QLineEdit(Form)
-        self.search_lin.setMinimumSize(QtCore.QSize(790, 40))
-        self.search_lin.setMaximumSize(QtCore.QSize(750, 40))
-        self.search_lin.setStyleSheet("border-radius:10% 10%;\n"
-"padding:10px;\n"
-"font-size:16px")
-        self.search_lin.setClearButtonEnabled(True)
-        self.search_lin.setObjectName("search_lin")
-        self.gridLayout.addWidget(self.search_lin, 1, 1, 1, 1)
+        self.gridLayout.addWidget(self.scrollArea, 1, 1, 2, 2)
         self.frame_2 = QtWidgets.QFrame(Form)
         self.frame_2.setMinimumSize(QtCore.QSize(0, 80))
         self.frame_2.setMaximumSize(QtCore.QSize(16777215, 80))
-        self.frame_2.setStyleSheet("background-color: #38474f;\n"
+        self.frame_2.setStyleSheet("background-color:rgb(0,49,113,255);\n"
 "border-radius:5% 5%;")
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -492,8 +479,8 @@ class Ui_Form(object):
         self.back_to_home_btn_2.setIconSize(QtCore.QSize(30, 30))
         self.back_to_home_btn_2.setObjectName("back_to_home_btn_2")
         self.gridLayout_5.addWidget(self.back_to_home_btn_2, 0, 0, 1, 1)
-        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_5.addItem(spacerItem2, 0, 2, 1, 1)
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_5.addItem(spacerItem, 0, 2, 1, 1)
         self.pushButton_16 = QtWidgets.QPushButton(self.frame_2)
         self.pushButton_16.setMinimumSize(QtCore.QSize(70, 70))
         self.pushButton_16.setMaximumSize(QtCore.QSize(70, 70))
@@ -508,6 +495,10 @@ class Ui_Form(object):
         self.pushButton_16.setObjectName("pushButton_16")
         self.gridLayout_5.addWidget(self.pushButton_16, 0, 1, 1, 1)
         self.gridLayout.addWidget(self.frame_2, 0, 0, 1, 4)
+        spacerItem1 = QtWidgets.QSpacerItem(91, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout.addItem(spacerItem1, 2, 3, 1, 1)
+        spacerItem2 = QtWidgets.QSpacerItem(37, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout.addItem(spacerItem2, 1, 0, 1, 1)
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)

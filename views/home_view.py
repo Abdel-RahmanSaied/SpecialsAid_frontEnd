@@ -16,8 +16,8 @@ class Ui_Form(object):
         Form.setObjectName("Form")
         Form.resize(992, 771)
         Form.setStyleSheet("\n"
-"QMainWindow {\n"
-"    background-color:#d4dbdf;\n"
+"QWidget {\n"
+"    background-color: rgb(243, 245, 249);\n"
 "}\n"
 "QPushButton, QToolButton, QCommandLinkButton{\n"
 "    padding: 0 5px 0 5px;\n"
@@ -301,12 +301,12 @@ class Ui_Form(object):
 "    background-color: #e0e0e0;\n"
 "}\n"
 "QTabWidget {\n"
-"    color:rgb(0,0,0);\n"
-"    background-color:#000000;\n"
+"    color:rgb(0,0,0,0);\n"
+"    background-color:rgb(0,0,0,0);\n"
 "}\n"
 "QTabWidget::pane {\n"
-"    border-color: #050a0e;\n"
-"    background-color: #e0e0e0;\n"
+"    border-color: rgb(0,0,0,0);\n"
+"    background-color: rgb(0,0,0,0);\n"
 "    border-width: 1px;\n"
 "    border-radius: 4px;\n"
 "    position: absolute;\n"
@@ -322,7 +322,6 @@ class Ui_Form(object):
 "    border-bottom: 1px solid #c0c0c0;\n"
 "    padding: 3px;\n"
 "    color: #272727;\n"
-"    background-color: #fefefc;\n"
 "    margin-left:0px;\n"
 "}\n"
 "QTabBar::tab:!last {\n"
@@ -339,8 +338,8 @@ class Ui_Form(object):
 "    border-bottom-right-radius: 4px;\n"
 "}\n"
 "QTabBar::tab:selected, QTabBar::tab:last:selected, QTabBar::tab:hover {\n"
-"    color: #FFFFFF;\n"
-"    background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 #84afe5, stop:1 #1168e4);\n"
+"    color: #a0a6ac;\n"
+"    background-color:#003171;\n"
 "}\n"
 "QRadioButton::indicator {\n"
 "    height: 14px;\n"
@@ -445,38 +444,13 @@ class Ui_Form(object):
 "}")
         self.gridLayout = QtWidgets.QGridLayout(Form)
         self.gridLayout.setObjectName("gridLayout")
-        self.frame_2 = QtWidgets.QFrame(Form)
-        self.frame_2.setMinimumSize(QtCore.QSize(0, 80))
-        self.frame_2.setMaximumSize(QtCore.QSize(16777215, 80))
-        self.frame_2.setStyleSheet("background-color: #38474f;\n"
-"border-radius:5% 5%;")
-        self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_2.setObjectName("frame_2")
-        self.gridLayout_5 = QtWidgets.QGridLayout(self.frame_2)
-        self.gridLayout_5.setObjectName("gridLayout_5")
-        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_5.addItem(spacerItem, 0, 1, 1, 1)
-        self.pushButton_16 = QtWidgets.QPushButton(self.frame_2)
-        self.pushButton_16.setMinimumSize(QtCore.QSize(70, 70))
-        self.pushButton_16.setMaximumSize(QtCore.QSize(70, 70))
-        self.pushButton_16.setStyleSheet("background-color: rgb(255, 255, 255,0);\n"
-"\n"
-"border-color: rgb(255, 255, 255,0);")
-        self.pushButton_16.setText("")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/icons/icons/7069717.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton_16.setIcon(icon)
-        self.pushButton_16.setIconSize(QtCore.QSize(70, 70))
-        self.pushButton_16.setObjectName("pushButton_16")
-        self.gridLayout_5.addWidget(self.pushButton_16, 0, 0, 1, 1)
-        self.gridLayout.addWidget(self.frame_2, 1, 1, 1, 3)
-        spacerItem1 = QtWidgets.QSpacerItem(20, 133, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout.addItem(spacerItem1, 7, 2, 1, 1)
+        spacerItem = QtWidgets.QSpacerItem(20, 133, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout.addItem(spacerItem, 7, 2, 1, 1)
         self.tabWidget = QtWidgets.QTabWidget(Form)
         self.tabWidget.setMinimumSize(QtCore.QSize(500, 300))
         self.tabWidget.setMaximumSize(QtCore.QSize(500, 300))
         self.tabWidget.setStyleSheet("border-radius:10% 10%;\n"
+"background-color: rgb(255, 255, 255);\n"
 "font-size:15px;")
         self.tabWidget.setObjectName("tabWidget")
         self.me_tab = QtWidgets.QWidget()
@@ -485,24 +459,35 @@ class Ui_Form(object):
         self.me_btn.setGeometry(QtCore.QRect(150, 125, 210, 60))
         self.me_btn.setMinimumSize(QtCore.QSize(210, 60))
         self.me_btn.setMaximumSize(QtCore.QSize(210, 60))
+        font = QtGui.QFont()
+        font.setFamily("Ubuntu")
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
+        self.me_btn.setFont(font)
         self.me_btn.setStyleSheet("*{border-radius:30% 30%;\n"
 "font-size:20px;\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(26, 95, 180);}\n"
+"background-color:#003171;}\n"
 "QPushButton:hover{\n"
 "    background-color: rgb(53, 132, 228);\n"
 "}\n"
 "")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(":/icons/icons/icons8-user-96.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.me_btn.setIcon(icon1)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/icons/icons/icons8-user-96.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.me_btn.setIcon(icon)
         self.me_btn.setIconSize(QtCore.QSize(40, 40))
         self.me_btn.setObjectName("me_btn")
         self.label_2 = QtWidgets.QLabel(self.me_tab)
         self.label_2.setGeometry(QtCore.QRect(90, 50, 310, 20))
         self.label_2.setMinimumSize(QtCore.QSize(310, 20))
         self.label_2.setMaximumSize(QtCore.QSize(310, 20))
-        self.label_2.setStyleSheet("font-size:25px;")
+        font = QtGui.QFont()
+        font.setFamily("Ubuntu")
+        font.setPointSize(-1)
+        self.label_2.setFont(font)
+        self.label_2.setStyleSheet("font-size:25px;\n"
+"color: #9d9fa3;")
         self.label_2.setAlignment(QtCore.Qt.AlignCenter)
         self.label_2.setObjectName("label_2")
         self.tabWidget.addTab(self.me_tab, "")
@@ -512,7 +497,12 @@ class Ui_Form(object):
         self.label.setGeometry(QtCore.QRect(35, 40, 432, 20))
         self.label.setMinimumSize(QtCore.QSize(420, 20))
         self.label.setMaximumSize(QtCore.QSize(450, 20))
-        self.label.setStyleSheet("font-size:25px;")
+        font = QtGui.QFont()
+        font.setFamily("Ubuntu")
+        font.setPointSize(-1)
+        self.label.setFont(font)
+        self.label.setStyleSheet("font-size:25px;\n"
+"color: rgb(160, 166, 169);")
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
         self.login_btn = QtWidgets.QPushButton(self.edit_tab)
@@ -528,7 +518,7 @@ class Ui_Form(object):
         self.login_btn.setStyleSheet("*{border-radius:15% 15%;\n"
 "    border-color: rgb(255, 255, 255,0);\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(26, 95, 180);}\n"
+"background-color:rgb(0,49,113,255);}\n"
 "QPushButton:hover{\n"
 "    background-color: rgb(53, 132, 228);\n"
 "}\n"
@@ -536,12 +526,17 @@ class Ui_Form(object):
         self.login_btn.setIconSize(QtCore.QSize(30, 30))
         self.login_btn.setObjectName("login_btn")
         self.symbols_btn = QtWidgets.QPushButton(self.edit_tab)
-        self.symbols_btn.setGeometry(QtCore.QRect(270, 240, 81, 21))
+        self.symbols_btn.setGeometry(QtCore.QRect(270, 240, 81, 23))
+        font = QtGui.QFont()
+        font.setFamily("Ubuntu")
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
+        self.symbols_btn.setFont(font)
         self.symbols_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.symbols_btn.setStyleSheet("    *{\n"
+        self.symbols_btn.setStyleSheet("*{\n"
 "    border-color: rgb(255, 255, 255,0);\n"
-"\n"
-"    color: rgb(28, 113, 216);\n"
+"    color: rgb(0,49,113,255);\n"
 "    background-color: rgb(53, 132, 228,0);}\n"
 "QPushButton:hover{\n"
 "\n"
@@ -550,22 +545,37 @@ class Ui_Form(object):
 "")
         self.symbols_btn.setObjectName("symbols_btn")
         self.username_lin = QtWidgets.QLineEdit(self.edit_tab)
-        self.username_lin.setGeometry(QtCore.QRect(120, 90, 271, 41))
-        self.username_lin.setStyleSheet("padding:10px;")
+        self.username_lin.setGeometry(QtCore.QRect(120, 90, 271, 38))
+        font = QtGui.QFont()
+        font.setFamily("Ubuntu")
+        font.setPointSize(-1)
+        self.username_lin.setFont(font)
+        self.username_lin.setStyleSheet("padding:7px;")
         self.username_lin.setClearButtonEnabled(True)
         self.username_lin.setObjectName("username_lin")
         self.Password_lin = QtWidgets.QLineEdit(self.edit_tab)
-        self.Password_lin.setGeometry(QtCore.QRect(120, 140, 271, 41))
-        self.Password_lin.setStyleSheet("padding:10px;")
+        self.Password_lin.setGeometry(QtCore.QRect(120, 140, 271, 38))
+        font = QtGui.QFont()
+        font.setFamily("Ubuntu")
+        font.setPointSize(-1)
+        self.Password_lin.setFont(font)
+        self.Password_lin.setStyleSheet("padding:7px;")
         self.Password_lin.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.Password_lin.setClearButtonEnabled(True)
         self.Password_lin.setObjectName("Password_lin")
         self.collections_btn = QtWidgets.QPushButton(self.edit_tab)
         self.collections_btn.setGeometry(QtCore.QRect(140, 240, 101, 21))
+        font = QtGui.QFont()
+        font.setFamily("Ubuntu")
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
+        self.collections_btn.setFont(font)
         self.collections_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.collections_btn.setStyleSheet("    *{\n"
 "    border-color: rgb(255, 255, 255,0);\n"
 "\n"
-"    color: rgb(28, 113, 216);\n"
+"    color: rgb(0,49,113,255);\n"
 "    background-color: rgb(53, 132, 228,0);}\n"
 "QPushButton:hover{\n"
 "\n"
@@ -575,50 +585,79 @@ class Ui_Form(object):
         self.collections_btn.setObjectName("collections_btn")
         self.tabWidget.addTab(self.edit_tab, "")
         self.gridLayout.addWidget(self.tabWidget, 5, 2, 2, 1)
-        spacerItem2 = QtWidgets.QSpacerItem(20, 60, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
-        self.gridLayout.addItem(spacerItem2, 2, 2, 1, 1)
+        self.frame_2 = QtWidgets.QFrame(Form)
+        self.frame_2.setMinimumSize(QtCore.QSize(0, 80))
+        self.frame_2.setMaximumSize(QtCore.QSize(16777215, 80))
+        self.frame_2.setStyleSheet("background-color:rgb(0,49,113,255);\n"
+"border-radius:5% 5%;")
+        self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_2.setObjectName("frame_2")
+        self.gridLayout_5 = QtWidgets.QGridLayout(self.frame_2)
+        self.gridLayout_5.setObjectName("gridLayout_5")
+        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_5.addItem(spacerItem1, 0, 1, 1, 1)
+        self.pushButton_16 = QtWidgets.QPushButton(self.frame_2)
+        self.pushButton_16.setMinimumSize(QtCore.QSize(70, 70))
+        self.pushButton_16.setMaximumSize(QtCore.QSize(70, 70))
+        self.pushButton_16.setStyleSheet("background-color: rgb(255, 255, 255,0);\n"
+"\n"
+"border-color: rgb(255, 255, 255,0);")
+        self.pushButton_16.setText("")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap(":/icons/icons/7069717.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton_16.setIcon(icon1)
+        self.pushButton_16.setIconSize(QtCore.QSize(70, 70))
+        self.pushButton_16.setObjectName("pushButton_16")
+        self.gridLayout_5.addWidget(self.pushButton_16, 0, 0, 1, 1)
+        self.gridLayout.addWidget(self.frame_2, 1, 1, 1, 3)
+        spacerItem2 = QtWidgets.QSpacerItem(20, 79, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
+        self.gridLayout.addItem(spacerItem2, 4, 2, 1, 1)
         spacerItem3 = QtWidgets.QSpacerItem(228, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout.addItem(spacerItem3, 5, 3, 1, 1)
-        spacerItem4 = QtWidgets.QSpacerItem(228, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout.addItem(spacerItem4, 5, 1, 1, 1)
-        spacerItem5 = QtWidgets.QSpacerItem(20, 79, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
-        self.gridLayout.addItem(spacerItem5, 4, 2, 1, 1)
+        self.gridLayout.addItem(spacerItem3, 5, 1, 1, 1)
         self.gridLayout_3 = QtWidgets.QGridLayout()
         self.gridLayout_3.setObjectName("gridLayout_3")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        spacerItem6 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_2.addItem(spacerItem6)
+        spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_2.addItem(spacerItem4)
         self.label_4 = QtWidgets.QLabel(Form)
-        self.label_4.setMinimumSize(QtCore.QSize(200, 30))
+        self.label_4.setMinimumSize(QtCore.QSize(300, 30))
         self.label_4.setMaximumSize(QtCore.QSize(200, 30))
         font = QtGui.QFont()
-        font.setPointSize(11)
+        font.setFamily("Ubuntu")
+        font.setPointSize(16)
         self.label_4.setFont(font)
         self.label_4.setAlignment(QtCore.Qt.AlignCenter)
         self.label_4.setObjectName("label_4")
         self.horizontalLayout_2.addWidget(self.label_4)
-        spacerItem7 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_2.addItem(spacerItem7)
+        spacerItem5 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_2.addItem(spacerItem5)
         self.gridLayout_3.addLayout(self.horizontalLayout_2, 1, 0, 1, 1)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
-        spacerItem8 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout.addItem(spacerItem8)
+        spacerItem6 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout.addItem(spacerItem6)
         self.label_3 = QtWidgets.QLabel(Form)
-        self.label_3.setMinimumSize(QtCore.QSize(80, 40))
+        self.label_3.setMinimumSize(QtCore.QSize(100, 40))
         self.label_3.setMaximumSize(QtCore.QSize(80, 40))
         font = QtGui.QFont()
+        font.setFamily("Ubuntu")
         font.setPointSize(-1)
         self.label_3.setFont(font)
-        self.label_3.setStyleSheet("font-size:30px;")
+        self.label_3.setStyleSheet("font-size:40px;\n"
+"color: rgb(160, 166, 169);")
         self.label_3.setAlignment(QtCore.Qt.AlignCenter)
         self.label_3.setObjectName("label_3")
         self.horizontalLayout.addWidget(self.label_3)
-        spacerItem9 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout.addItem(spacerItem9)
+        spacerItem7 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout.addItem(spacerItem7)
         self.gridLayout_3.addLayout(self.horizontalLayout, 0, 0, 1, 1)
         self.gridLayout.addLayout(self.gridLayout_3, 3, 1, 1, 3)
+        spacerItem8 = QtWidgets.QSpacerItem(20, 60, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.gridLayout.addItem(spacerItem8, 2, 2, 1, 1)
+        spacerItem9 = QtWidgets.QSpacerItem(228, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout.addItem(spacerItem9, 5, 3, 1, 1)
 
         self.retranslateUi(Form)
         self.tabWidget.setCurrentIndex(1)
@@ -628,9 +667,7 @@ class Ui_Form(object):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
         self.me_btn.setText(_translate("Form", "    Me"))
-        self.label_2.setText(_translate("Form", "Let the user communicate!\n"
-"\n"
-""))
+        self.label_2.setText(_translate("Form", "Let the user communicate !"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.me_tab), _translate("Form", "    ME MODE    "))
         self.label.setText(_translate("Form", "Add symbols, build boards and more!\n"
 "\n"

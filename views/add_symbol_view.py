@@ -19,8 +19,8 @@ class Ui_Form(object):
         font.setFamily("Ubuntu")
         Form.setFont(font)
         Form.setStyleSheet("\n"
-"QMainWindow {\n"
-"    background-color:#f5f5f5;\n"
+"QWidget {\n"
+"    background-color: rgb(243, 245, 249);\n"
 "}\n"
 "QPushButton, QToolButton, QCommandLinkButton{\n"
 "    padding: 0 5px 0 5px;\n"
@@ -451,7 +451,7 @@ class Ui_Form(object):
         self.frame_2 = QtWidgets.QFrame(Form)
         self.frame_2.setMinimumSize(QtCore.QSize(0, 80))
         self.frame_2.setMaximumSize(QtCore.QSize(16777215, 80))
-        self.frame_2.setStyleSheet("background-color: #38474f;\n"
+        self.frame_2.setStyleSheet("background-color:rgb(0,49,113,255);\n"
 "border-radius:5% 5%;")
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -471,31 +471,19 @@ class Ui_Form(object):
         self.pushButton_16.setIconSize(QtCore.QSize(70, 70))
         self.pushButton_16.setObjectName("pushButton_16")
         self.gridLayout_5.addWidget(self.pushButton_16, 0, 1, 1, 1)
-        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_5.addItem(spacerItem, 0, 2, 1, 1)
-        self.pushButton = QtWidgets.QPushButton(self.frame_2)
-        self.pushButton.setMinimumSize(QtCore.QSize(44, 44))
-        self.pushButton.setMaximumSize(QtCore.QSize(44, 44))
-        self.pushButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton.setStyleSheet("border-radius:20% 20%;")
-        self.pushButton.setText("")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(":/icons/icons/icons8-do-not-disturb-ios-50.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton.setIcon(icon1)
-        self.pushButton.setIconSize(QtCore.QSize(30, 30))
-        self.pushButton.setObjectName("pushButton")
-        self.gridLayout_5.addWidget(self.pushButton, 0, 3, 1, 1)
         self.back_to_home_btn = QtWidgets.QPushButton(self.frame_2)
         self.back_to_home_btn.setMinimumSize(QtCore.QSize(20, 0))
         self.back_to_home_btn.setMaximumSize(QtCore.QSize(20, 16777215))
         self.back_to_home_btn.setStyleSheet("border-color: rgb(255, 255, 255,0);")
         self.back_to_home_btn.setText("")
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(":/icons/icons/icons8-back-50.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.back_to_home_btn.setIcon(icon2)
-        self.back_to_home_btn.setIconSize(QtCore.QSize(30, 30))
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap(":/icons/icons/icons8-back-50.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.back_to_home_btn.setIcon(icon1)
+        self.back_to_home_btn.setIconSize(QtCore.QSize(40, 40))
         self.back_to_home_btn.setObjectName("back_to_home_btn")
         self.gridLayout_5.addWidget(self.back_to_home_btn, 0, 0, 1, 1)
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_5.addItem(spacerItem, 0, 2, 1, 1)
         self.gridLayout.addWidget(self.frame_2, 0, 0, 1, 4)
         spacerItem1 = QtWidgets.QSpacerItem(20, 150, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         self.gridLayout.addItem(spacerItem1, 1, 1, 1, 1)
@@ -505,21 +493,27 @@ class Ui_Form(object):
         self.groupBox.setMinimumSize(QtCore.QSize(651, 421))
         font = QtGui.QFont()
         font.setFamily("Ubuntu")
+        font.setPointSize(-1)
         self.groupBox.setFont(font)
+        self.groupBox.setStyleSheet("border-radius:10% 10%;\n"
+"background-color: rgb(255, 255, 255);\n"
+"font-size:15px;")
         self.groupBox.setTitle("")
         self.groupBox.setObjectName("groupBox")
         self.add_symbol_btn = QtWidgets.QPushButton(self.groupBox)
         self.add_symbol_btn.setGeometry(QtCore.QRect(160, 30, 161, 51))
         font = QtGui.QFont()
         font.setFamily("Ubuntu")
-        font.setPointSize(12)
+        font.setPointSize(-1)
         font.setBold(True)
         font.setWeight(75)
         self.add_symbol_btn.setFont(font)
         self.add_symbol_btn.setStyleSheet("*{border-radius:10% 10%;\n"
 "    border-color: rgb(255, 255, 255,0);\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(26, 95, 180);}\n"
+"background-color:rgb(0,49,113,255);\n"
+"\n"
+"}\n"
 "QPushButton:hover{\n"
 "    background-color: rgb(53, 132, 228);\n"
 "}\n"
@@ -529,7 +523,7 @@ class Ui_Form(object):
         self.add_collection_btn.setGeometry(QtCore.QRect(340, 30, 161, 51))
         font = QtGui.QFont()
         font.setFamily("Ubuntu")
-        font.setPointSize(12)
+        font.setPointSize(-1)
         font.setBold(True)
         font.setWeight(75)
         self.add_collection_btn.setFont(font)
@@ -548,14 +542,15 @@ class Ui_Form(object):
         self.upload_symbol_btn.setGeometry(QtCore.QRect(95, 360, 151, 40))
         font = QtGui.QFont()
         font.setFamily("Ubuntu")
-        font.setPointSize(12)
+        font.setPointSize(-1)
         font.setBold(True)
         font.setWeight(75)
         self.upload_symbol_btn.setFont(font)
         self.upload_symbol_btn.setStyleSheet("*{border-radius:10% 10%;\n"
 "    border-color: rgb(255, 255, 255,0);\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(26, 95, 180);}\n"
+"background-color:rgb(0,49,113,255);\n"
+"}\n"
 "QPushButton:hover{\n"
 "    background-color: rgb(53, 132, 228);\n"
 "}\n"
@@ -571,7 +566,7 @@ class Ui_Form(object):
         self.symbol_name_lin.setMinimumSize(QtCore.QSize(480, 45))
         font = QtGui.QFont()
         font.setFamily("Ubuntu")
-        font.setPointSize(12)
+        font.setPointSize(-1)
         self.symbol_name_lin.setFont(font)
         self.symbol_name_lin.setStyleSheet("padding:10px;")
         self.symbol_name_lin.setObjectName("symbol_name_lin")
@@ -581,6 +576,12 @@ class Ui_Form(object):
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.choose_file_btn = QtWidgets.QPushButton(self.layoutWidget)
         self.choose_file_btn.setMinimumSize(QtCore.QSize(110, 45))
+        font = QtGui.QFont()
+        font.setFamily("Ubuntu")
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
+        self.choose_file_btn.setFont(font)
         self.choose_file_btn.setStyleSheet("background-color: rgb(202, 202, 202);\n"
 "border-radius:1px;")
         self.choose_file_btn.setObjectName("choose_file_btn")
@@ -589,7 +590,7 @@ class Ui_Form(object):
         self.symbol_location_lin.setMinimumSize(QtCore.QSize(0, 45))
         font = QtGui.QFont()
         font.setFamily("Ubuntu")
-        font.setPointSize(12)
+        font.setPointSize(-1)
         self.symbol_location_lin.setFont(font)
         self.symbol_location_lin.setStyleSheet("padding:10px;")
         self.symbol_location_lin.setReadOnly(True)
@@ -598,13 +599,17 @@ class Ui_Form(object):
         self.verticalLayout.addLayout(self.horizontalLayout)
         self.collection_combobox = QtWidgets.QComboBox(self.layoutWidget)
         self.collection_combobox.setMinimumSize(QtCore.QSize(481, 45))
+        font = QtGui.QFont()
+        font.setFamily("Ubuntu")
+        font.setPointSize(-1)
+        self.collection_combobox.setFont(font)
         self.collection_combobox.setObjectName("collection_combobox")
         self.verticalLayout.addWidget(self.collection_combobox)
         self.text_to_talk_lin = QtWidgets.QLineEdit(self.layoutWidget)
         self.text_to_talk_lin.setMinimumSize(QtCore.QSize(480, 45))
         font = QtGui.QFont()
         font.setFamily("Ubuntu")
-        font.setPointSize(12)
+        font.setPointSize(-1)
         self.text_to_talk_lin.setFont(font)
         self.text_to_talk_lin.setStyleSheet("padding:10px;")
         self.text_to_talk_lin.setObjectName("text_to_talk_lin")
@@ -624,9 +629,9 @@ class Ui_Form(object):
         self.add_symbol_btn.setText(_translate("Form", "ADD SYMBOL"))
         self.add_collection_btn.setText(_translate("Form", "ADD COLLECTION"))
         self.upload_symbol_btn.setText(_translate("Form", "UPLOAD"))
-        self.symbol_name_lin.setPlaceholderText(_translate("Form", "NAME"))
+        self.symbol_name_lin.setPlaceholderText(_translate("Form", "Name"))
         self.choose_file_btn.setText(_translate("Form", "CHOOSE FILE"))
         self.symbol_location_lin.setPlaceholderText(_translate("Form", "No file choosen"))
-        self.collection_combobox.setPlaceholderText(_translate("Form", "COLLECTION"))
-        self.text_to_talk_lin.setPlaceholderText(_translate("Form", "TEXT TO TALK"))
+        self.collection_combobox.setPlaceholderText(_translate("Form", "-- No collection Chossen --"))
+        self.text_to_talk_lin.setPlaceholderText(_translate("Form", "Text To Talk"))
 import app_resources_rc

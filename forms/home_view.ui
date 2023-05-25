@@ -15,8 +15,8 @@
   </property>
   <property name="styleSheet">
    <string notr="true">
-QMainWindow {
-    background-color:#d4dbdf;
+QWidget {
+	background-color: rgb(243, 245, 249);
 }
 QPushButton, QToolButton, QCommandLinkButton{
     padding: 0 5px 0 5px;
@@ -300,12 +300,12 @@ QMenu::item {
     background-color: #e0e0e0;
 }
 QTabWidget {
-    color:rgb(0,0,0);
-    background-color:#000000;
+    color:rgb(0,0,0,0);
+    background-color:rgb(0,0,0,0);
 }
 QTabWidget::pane {
-    border-color: #050a0e;
-    background-color: #e0e0e0;
+    border-color: rgb(0,0,0,0);
+    background-color: rgb(0,0,0,0);
     border-width: 1px;
     border-radius: 4px;
     position: absolute;
@@ -321,7 +321,6 @@ QTabBar::tab {
     border-bottom: 1px solid #c0c0c0;
     padding: 3px;
     color: #272727;
-    background-color: #fefefc;
     margin-left:0px;
 }
 QTabBar::tab:!last {
@@ -338,8 +337,8 @@ QTabBar::tab:last {
     border-bottom-right-radius: 4px;
 }
 QTabBar::tab:selected, QTabBar::tab:last:selected, QTabBar::tab:hover {
-    color: #FFFFFF;
-    background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 #84afe5, stop:1 #1168e4);
+    color: #a0a6ac;
+    background-color:#003171;
 }
 QRadioButton::indicator {
     height: 14px;
@@ -444,6 +443,357 @@ QScrollBar::right-arrow:horizontal {
 }</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <item row="7" column="2">
+    <spacer name="verticalSpacer_5">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>133</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="5" column="2" rowspan="2">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="minimumSize">
+      <size>
+       <width>500</width>
+       <height>300</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>500</width>
+       <height>300</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius:10% 10%;
+background-color: rgb(255, 255, 255);
+font-size:15px;</string>
+     </property>
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <widget class="QWidget" name="me_tab">
+      <attribute name="title">
+       <string>    ME MODE    </string>
+      </attribute>
+      <widget class="QPushButton" name="me_btn">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>125</y>
+         <width>210</width>
+         <height>60</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>210</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>210</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">*{border-radius:30% 30%;
+font-size:20px;
+color: rgb(255, 255, 255);
+background-color:#003171;}
+QPushButton:hover{
+	background-color: rgb(53, 132, 228);
+}
+</string>
+       </property>
+       <property name="text">
+        <string>    Me</string>
+       </property>
+       <property name="icon">
+        <iconset resource="app_resources.qrc">
+         <normaloff>:/icons/icons/icons8-user-96.png</normaloff>:/icons/icons/icons8-user-96.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>50</y>
+         <width>310</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>310</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>310</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font-size:25px;
+color: #9d9fa3;</string>
+       </property>
+       <property name="text">
+        <string>Let the user communicate !</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="edit_tab">
+      <attribute name="title">
+       <string>    EDIT MODE    </string>
+      </attribute>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>35</x>
+         <y>40</y>
+         <width>432</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>420</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>450</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font-size:25px;
+color: rgb(160, 166, 169);</string>
+       </property>
+       <property name="text">
+        <string>Add symbols, build boards and more!
+
+</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="login_btn">
+       <property name="geometry">
+        <rect>
+         <x>290</x>
+         <y>190</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>210</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">*{border-radius:15% 15%;
+	border-color: rgb(255, 255, 255,0);
+color: rgb(255, 255, 255);
+background-color:rgb(0,49,113,255);}
+QPushButton:hover{
+	background-color: rgb(53, 132, 228);
+}
+</string>
+       </property>
+       <property name="text">
+        <string>LOGIN</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="symbols_btn">
+       <property name="geometry">
+        <rect>
+         <x>270</x>
+         <y>240</y>
+         <width>81</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">*{
+	border-color: rgb(255, 255, 255,0);
+	color: rgb(0,49,113,255);
+	background-color: rgb(53, 132, 228,0);}
+QPushButton:hover{
+
+	color: rgb(153, 193, 241);
+}
+</string>
+       </property>
+       <property name="text">
+        <string>symbols</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="username_lin">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>90</y>
+         <width>271</width>
+         <height>38</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">padding:7px;</string>
+       </property>
+       <property name="placeholderText">
+        <string>Username</string>
+       </property>
+       <property name="clearButtonEnabled">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="Password_lin">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>140</y>
+         <width>271</width>
+         <height>38</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">padding:7px;</string>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+       <property name="placeholderText">
+        <string>Password</string>
+       </property>
+       <property name="clearButtonEnabled">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="collections_btn">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>240</y>
+         <width>101</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">	*{
+	border-color: rgb(255, 255, 255,0);
+
+	color: rgb(0,49,113,255);
+	background-color: rgb(53, 132, 228,0);}
+QPushButton:hover{
+
+	color: rgb(153, 193, 241);
+}
+</string>
+       </property>
+       <property name="text">
+        <string>collections</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </item>
    <item row="1" column="1" colspan="3">
     <widget class="QFrame" name="frame_2">
      <property name="minimumSize">
@@ -459,7 +809,7 @@ QScrollBar::right-arrow:horizontal {
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: #38474f;
+      <string notr="true">background-color:rgb(0,49,113,255);
 border-radius:5% 5%;</string>
      </property>
      <property name="frameShape">
@@ -519,331 +869,18 @@ border-color: rgb(255, 255, 255,0);</string>
      </layout>
     </widget>
    </item>
-   <item row="7" column="2">
-    <spacer name="verticalSpacer_5">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>133</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="5" column="2" rowspan="2">
-    <widget class="QTabWidget" name="tabWidget">
-     <property name="minimumSize">
-      <size>
-       <width>500</width>
-       <height>300</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>500</width>
-       <height>300</height>
-      </size>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border-radius:10% 10%;
-font-size:15px;</string>
-     </property>
-     <property name="currentIndex">
-      <number>1</number>
-     </property>
-     <widget class="QWidget" name="me_tab">
-      <attribute name="title">
-       <string>    ME MODE    </string>
-      </attribute>
-      <widget class="QPushButton" name="me_btn">
-       <property name="geometry">
-        <rect>
-         <x>150</x>
-         <y>125</y>
-         <width>210</width>
-         <height>60</height>
-        </rect>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>210</width>
-         <height>60</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>210</width>
-         <height>60</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">*{border-radius:30% 30%;
-font-size:20px;
-color: rgb(255, 255, 255);
-background-color: rgb(26, 95, 180);}
-QPushButton:hover{
-	background-color: rgb(53, 132, 228);
-}
-</string>
-       </property>
-       <property name="text">
-        <string>    Me</string>
-       </property>
-       <property name="icon">
-        <iconset resource="app_resources.qrc">
-         <normaloff>:/icons/icons/icons8-user-96.png</normaloff>:/icons/icons/icons8-user-96.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>40</width>
-         <height>40</height>
-        </size>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_2">
-       <property name="geometry">
-        <rect>
-         <x>90</x>
-         <y>50</y>
-         <width>310</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>310</width>
-         <height>20</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>310</width>
-         <height>20</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">font-size:25px;</string>
-       </property>
-       <property name="text">
-        <string>Let the user communicate!
-
-</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="edit_tab">
-      <attribute name="title">
-       <string>    EDIT MODE    </string>
-      </attribute>
-      <widget class="QLabel" name="label">
-       <property name="geometry">
-        <rect>
-         <x>35</x>
-         <y>40</y>
-         <width>432</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>420</width>
-         <height>20</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>450</width>
-         <height>20</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">font-size:25px;</string>
-       </property>
-       <property name="text">
-        <string>Add symbols, build boards and more!
-
-</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="login_btn">
-       <property name="geometry">
-        <rect>
-         <x>290</x>
-         <y>190</y>
-         <width>101</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>210</width>
-         <height>60</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Ubuntu</family>
-         <pointsize>-1</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">*{border-radius:15% 15%;
-	border-color: rgb(255, 255, 255,0);
-color: rgb(255, 255, 255);
-background-color: rgb(26, 95, 180);}
-QPushButton:hover{
-	background-color: rgb(53, 132, 228);
-}
-</string>
-       </property>
-       <property name="text">
-        <string>LOGIN</string>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>30</width>
-         <height>30</height>
-        </size>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="symbols_btn">
-       <property name="geometry">
-        <rect>
-         <x>270</x>
-         <y>240</y>
-         <width>81</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="cursor">
-        <cursorShape>PointingHandCursor</cursorShape>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">	*{
-	border-color: rgb(255, 255, 255,0);
-
-	color: rgb(28, 113, 216);
-	background-color: rgb(53, 132, 228,0);}
-QPushButton:hover{
-
-	color: rgb(153, 193, 241);
-}
-</string>
-       </property>
-       <property name="text">
-        <string>symbols</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="username_lin">
-       <property name="geometry">
-        <rect>
-         <x>120</x>
-         <y>90</y>
-         <width>271</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">padding:10px;</string>
-       </property>
-       <property name="placeholderText">
-        <string>Username</string>
-       </property>
-       <property name="clearButtonEnabled">
-        <bool>true</bool>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="Password_lin">
-       <property name="geometry">
-        <rect>
-         <x>120</x>
-         <y>140</y>
-         <width>271</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">padding:10px;</string>
-       </property>
-       <property name="echoMode">
-        <enum>QLineEdit::Password</enum>
-       </property>
-       <property name="placeholderText">
-        <string>Password</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="collections_btn">
-       <property name="geometry">
-        <rect>
-         <x>140</x>
-         <y>240</y>
-         <width>101</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="cursor">
-        <cursorShape>PointingHandCursor</cursorShape>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">	*{
-	border-color: rgb(255, 255, 255,0);
-
-	color: rgb(28, 113, 216);
-	background-color: rgb(53, 132, 228,0);}
-QPushButton:hover{
-
-	color: rgb(153, 193, 241);
-}
-</string>
-       </property>
-       <property name="text">
-        <string>collections</string>
-       </property>
-      </widget>
-     </widget>
-    </widget>
-   </item>
-   <item row="2" column="2">
-    <spacer name="verticalSpacer_6">
+   <item row="4" column="2">
+    <spacer name="verticalSpacer_4">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
      <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
+      <enum>QSizePolicy::Preferred</enum>
      </property>
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>60</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="5" column="3">
-    <spacer name="horizontalSpacer_6">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>228</width>
-       <height>20</height>
+       <height>79</height>
       </size>
      </property>
     </spacer>
@@ -857,22 +894,6 @@ QPushButton:hover{
       <size>
        <width>228</width>
        <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="4" column="2">
-    <spacer name="verticalSpacer_4">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Preferred</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>79</height>
       </size>
      </property>
     </spacer>
@@ -898,7 +919,7 @@ QPushButton:hover{
         <widget class="QLabel" name="label_4">
          <property name="minimumSize">
           <size>
-           <width>200</width>
+           <width>300</width>
            <height>30</height>
           </size>
          </property>
@@ -910,7 +931,8 @@ QPushButton:hover{
          </property>
          <property name="font">
           <font>
-           <pointsize>11</pointsize>
+           <family>Ubuntu</family>
+           <pointsize>16</pointsize>
           </font>
          </property>
          <property name="text">
@@ -955,7 +977,7 @@ QPushButton:hover{
         <widget class="QLabel" name="label_3">
          <property name="minimumSize">
           <size>
-           <width>80</width>
+           <width>100</width>
            <height>40</height>
           </size>
          </property>
@@ -967,11 +989,13 @@ QPushButton:hover{
          </property>
          <property name="font">
           <font>
+           <family>Ubuntu</family>
            <pointsize>-1</pointsize>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">font-size:30px;</string>
+          <string notr="true">font-size:40px;
+color: rgb(160, 166, 169);</string>
          </property>
          <property name="text">
           <string>Hello</string>
@@ -997,6 +1021,35 @@ QPushButton:hover{
       </layout>
      </item>
     </layout>
+   </item>
+   <item row="2" column="2">
+    <spacer name="verticalSpacer_6">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>60</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="5" column="3">
+    <spacer name="horizontalSpacer_6">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>228</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
    </item>
   </layout>
  </widget>

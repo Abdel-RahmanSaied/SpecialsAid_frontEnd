@@ -16,8 +16,8 @@ class Ui_Form(object):
         Form.setObjectName("Form")
         Form.resize(1176, 848)
         Form.setStyleSheet("\n"
-"QMainWindow {\n"
-"    background-color:#d4dbdf;\n"
+"QWidget {\n"
+"    background-color: rgb(243, 245, 249);\n"
 "}\n"
 "QPushButton, QToolButton, QCommandLinkButton{\n"
 "    padding: 0 5px 0 5px;\n"
@@ -448,7 +448,7 @@ class Ui_Form(object):
         self.frame_2 = QtWidgets.QFrame(Form)
         self.frame_2.setMinimumSize(QtCore.QSize(0, 80))
         self.frame_2.setMaximumSize(QtCore.QSize(16777215, 80))
-        self.frame_2.setStyleSheet("background-color: #38474f;\n"
+        self.frame_2.setStyleSheet("background-color:rgb(0,49,113,255);\n"
 "border-radius:5% 5%;")
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -458,7 +458,7 @@ class Ui_Form(object):
         self.label = QtWidgets.QLabel(self.frame_2)
         font = QtGui.QFont()
         font.setFamily("Ubuntu")
-        font.setPointSize(16)
+        font.setPointSize(23)
         font.setBold(True)
         font.setWeight(75)
         self.label.setFont(font)
@@ -468,6 +468,8 @@ class Ui_Form(object):
         spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_5.addItem(spacerItem, 0, 2, 1, 1)
         self.back_btn = QtWidgets.QPushButton(self.frame_2)
+        self.back_btn.setMinimumSize(QtCore.QSize(20, 0))
+        self.back_btn.setMaximumSize(QtCore.QSize(20, 16777215))
         self.back_btn.setStyleSheet("border-color: rgb(255, 255, 255,0);")
         self.back_btn.setText("")
         icon = QtGui.QIcon()
