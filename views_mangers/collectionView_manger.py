@@ -52,8 +52,8 @@ class CollectionScreen(QtWidgets.QWidget, collection_view.Ui_Form):
             self.collect1_btn_10, self.collect1_btn_11, self.collect1_btn_12, self.collect1_btn_13,
             self.collect1_btn_14, self.collect1_btn_14
         ]
-        self.lblList = [
-            self.textCollection_lbl_10, self.textCollection_lbl, self.textCollection_lbl_2,
+        self.labelsList = [
+            self.textCollection_lbl, self.textCollection_lbl_1, self.textCollection_lbl_2,
             self.textCollection_lbl_3, self.textCollection_lbl_4, self.textCollection_lbl_5,
             self.textCollection_lbl_6, self.textCollection_lbl_7, self.textCollection_lbl_8,
             self.textCollection_lbl_9, self.textCollection_lbl_11, self.textCollection_lbl_12,
@@ -61,7 +61,7 @@ class CollectionScreen(QtWidgets.QWidget, collection_view.Ui_Form):
 
         ]
 
-        # self.run()
+        self.run()
 
     def sendTextSignal(self, text):
         self.textSignal.emit('text_to_talk_lbl', text)
@@ -97,7 +97,7 @@ class CollectionScreen(QtWidgets.QWidget, collection_view.Ui_Form):
         btn.setIconSize(QtCore.QSize(180, 180))
 
     def setTextLabel(self, label, text):
-        label = self.findChild(QtWidgets.QLabel, label)
+        # label = self.findChild(QtWidgets.QLabel, label)
         label.setText(text)
 
     def get_image(self, url):

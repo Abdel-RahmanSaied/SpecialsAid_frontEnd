@@ -775,7 +775,7 @@ border-color: rgb(255, 255, 255,0);</string>
        </spacer>
       </item>
       <item row="2" column="0">
-       <widget class="QLabel" name="textCollection_lbl_10">
+       <widget class="QLabel" name="textCollection_lbl">
         <property name="text">
          <string>TextLabel</string>
         </property>
@@ -839,7 +839,7 @@ border-color: rgb(255, 255, 255,0);</string>
        </spacer>
       </item>
       <item row="2" column="0">
-       <widget class="QLabel" name="textCollection_lbl">
+       <widget class="QLabel" name="textCollection_lbl_1">
         <property name="text">
          <string>TextLabel</string>
         </property>
