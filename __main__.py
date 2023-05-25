@@ -195,7 +195,7 @@ class SpecialsAid(QtWidgets.QStackedWidget):
             setting = json.load(file)
             setting['inStartupMode'] = False
         # Write updated setting back to file
-        with open('setting/setting.json', 'w') as file:
+        with open(self.setting_dir, 'w') as file:
             json.dump(setting, file)
 
     def inToutorialMode(self):

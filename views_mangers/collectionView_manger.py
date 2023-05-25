@@ -61,7 +61,6 @@ class CollectionScreen(QtWidgets.QWidget, collection_view.Ui_Form):
 
         ]
 
-        self.run()
 
     def sendTextSignal(self, text):
         self.textSignal.emit('text_to_talk_lbl', text)
