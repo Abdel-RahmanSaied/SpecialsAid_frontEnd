@@ -53,6 +53,11 @@ class CollectionScreen(QtWidgets.QWidget, collection_view.Ui_Form):
             self.collect1_btn_14, self.collect1_btn_14
         ]
         self.lblList = [
+            self.textCollection_lbl_10, self.textCollection_lbl, self.textCollection_lbl_2,
+            self.textCollection_lbl_3, self.textCollection_lbl_4, self.textCollection_lbl_5,
+            self.textCollection_lbl_6, self.textCollection_lbl_7, self.textCollection_lbl_8,
+            self.textCollection_lbl_9, self.textCollection_lbl_11, self.textCollection_lbl_12,
+            self.textCollection_lbl_13, self.textCollection_lbl_14, self.textCollection_lbl_15,
 
         ]
 
